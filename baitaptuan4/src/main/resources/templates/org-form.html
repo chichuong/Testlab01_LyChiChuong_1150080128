@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organization Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --card-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .main-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+    .card-header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 25px 30px;
+      border: none;
+    }
+    .card-header h2 {
+      margin: 0;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-header h2 i {
+      font-size: 1.5rem;
+    }
+    .card-body {
+      padding: 35px;
+      background: white;
+    }
+    .form-label {
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 8px;
+    }
+    .form-label .required {
+      color: #dc3545;
+    }
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    }
+    .form-control.is-invalid {
+      border-color: #dc3545;
+    }
+    .invalid-feedback {
+      font-size: 0.875rem;
+      margin-top: 6px;
+    }
+    .input-group-text {
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-right: none;
+      border-radius: 12px 0 0 12px;
+      color: #667eea;
+    }
+    .input-group .form-control {
+      border-radius: 0 12px 12px 0;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--primary-gradient);
+      border: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    .btn-secondary {
+      background: #6c757d;
+      border: none;
+    }
+    .btn-secondary:hover {
+      background: #5a6268;
+      transform: translateY(-2px);
+    }
+    .btn-info {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      border: none;
+      color: white;
+    }
+    .btn-info:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+      color: white;
+    }
+    .btn-info.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .btn-group-custom {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .alert-success {
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      border: none;
+      border-radius: 12px;
+      color: #155724;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .alert-success i {
+      font-size: 1.25rem;
+    }
+    .mb-4 {
+      margin-bottom: 1.5rem !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="card">
+    <div class="card-header">
+      <h2><i class="bi bi-building"></i> Organization Form</h2>
+    </div>
+    <div class="card-body">
+      
+      <div class="alert-success" th:if="${message}">
+        <i class="bi bi-check-circle-fill"></i>
+        <span th:text="${message}"></span>
+      </div>
+
+      <form th:action="@{/organizations/save}" th:object="${form}" method="post">
+        
+        <div class="mb-4">
+          <label class="form-label">
+            <i class="bi bi-tag me-1"></i>Organization Name <span class="required">*</span>
+          </label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-building"></i></span>
+            <input type="text" class="form-control" th:field="*{orgName}" 
+                   th:classappend="${#fields.hasErrors('orgName')} ? 'is-invalid' : ''"
+                   placeholder="Enter organization name"/>
+          </div>
+          <div class="invalid-feedback d-block" th:if="${#fields.hasErrors('orgName')}" th:errors="*{orgName}"></div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">
+            <i class="bi bi-geo-alt me-1"></i>Address
+          </label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-pin-map"></i></span>
+            <input type="text" class="form-control" th:field="*{address}"
+                   th:classappend="${#fields.hasErrors('address')} ? 'is-invalid' : ''"
+                   placeholder="Enter address"/>
+          </div>
+          <div class="invalid-feedback d-block" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">
+            <i class="bi bi-telephone me-1"></i>Phone
+          </label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-phone"></i></span>
+            <input type="text" class="form-control" th:field="*{phone}"
+                   th:classappend="${#fields.hasErrors('phone')} ? 'is-invalid' : ''"
+                   placeholder="Enter phone number"/>
+          </div>
+          <div class="invalid-feedback d-block" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">
+            <i class="bi bi-envelope me-1"></i>Email
+          </label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-at"></i></span>
+            <input type="text" class="form-control" th:field="*{email}"
+                   th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''"
+                   placeholder="Enter email address"/>
+          </div>
+          <div class="invalid-feedback d-block" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+
+        <div class="btn-group-custom">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save me-2"></i>Save
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="history.back()">
+            <i class="bi bi-arrow-left me-2"></i>Back
+          </button>
+          <a class="btn btn-info"
+             th:classappend="${savedOrgId} == null ? 'disabled' : ''"
+             th:href="${savedOrgId} == null ? '#' : @{/directors/manage(orgId=${savedOrgId})}">
+            <i class="bi bi-person-badge me-2"></i>Director
+          </a>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
