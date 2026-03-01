@@ -1,0 +1,128 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Titles</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .btn-add {
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+      }
+
+      .btn-action {
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-edit {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .btn-delete {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Job Titles</h2>
+
+      <a href="/jobtitle/add" class="btn-add">Add New Job Title</a>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Job Title</th>
+            <th>Description</th>
+            <th>Specification</th>
+            <th>File Size</th>
+            <th>Note</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="job : ${jobTitles}">
+            <td th:text="${job.id}"></td>
+            <td th:text="${job.jobTitle}"></td>
+            <td th:text="${job.description}"></td>
+            <td th:text="${job.jobSpecification}"></td>
+            <td
+              th:text="${job.fileSize != null ? job.fileSize + ' bytes' : ''}"
+            ></td>
+            <td th:text="${job.note}"></td>
+            <td>
+              <a
+                th:href="@{/jobtitle/edit/{id}(id=${job.id})}"
+                class="btn-action btn-edit"
+                >Edit</a
+              >
+              <a
+                th:href="@{/jobtitle/delete/{id}(id=${job.id})}"
+                class="btn-action btn-delete"
+                onclick="return confirm('Are you sure?');"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <tr th:if="${#lists.isEmpty(jobTitles)}">
+            <td colspan="7" style="text-align: center; color: #999">
+              No job titles found
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

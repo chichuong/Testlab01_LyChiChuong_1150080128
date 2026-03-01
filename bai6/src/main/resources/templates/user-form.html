@@ -1,0 +1,311 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        background-color: #1a1a2e;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      .sidebar {
+        width: 200px;
+        background-color: #16213e;
+        padding: 30px 0;
+      }
+
+      .sidebar-header {
+        padding: 0 20px 30px;
+        border-bottom: 1px solid #2a3f5f;
+      }
+
+      .sidebar-header h2 {
+        color: #4ecca3;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .sidebar-item {
+        padding: 15px 20px;
+        color: #a9b3c1;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 14px;
+      }
+
+      .sidebar-item:hover {
+        background-color: #1a2942;
+        color: #4ecca3;
+      }
+
+      .sidebar-item.active {
+        background-color: #1a2942;
+        color: #4ecca3;
+        border-left: 3px solid #4ecca3;
+      }
+
+      .content {
+        flex: 1;
+        padding: 40px;
+        background-color: #1a1a2e;
+      }
+
+      .form-header {
+        margin-bottom: 30px;
+      }
+
+      .form-header h1 {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .alert {
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #ff6b6b;
+        color: white;
+        font-size: 14px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #a9b3c1;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .required::after {
+        content: "*";
+        color: #ff6b6b;
+        margin-left: 4px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2a3f5f;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: #16213e;
+        color: #ffffff;
+        transition: all 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="password"]:focus {
+        outline: none;
+        border-color: #4ecca3;
+        background-color: #1a2942;
+      }
+
+      input::placeholder {
+        color: #5a6f8f;
+      }
+
+      .error {
+        color: #ff6b6b;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      input.error-field {
+        border-color: #ff6b6b;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      button {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-create {
+        background: linear-gradient(135deg, #4ecca3 0%, #2ecc71 100%);
+        color: white;
+      }
+
+      .btn-create:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
+      }
+
+      .btn-update {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+      }
+
+      .btn-update:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+      }
+
+      .btn-delete {
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        color: white;
+      }
+
+      .btn-delete:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      }
+
+      .btn-reset {
+        background-color: #2a3f5f;
+        color: #a9b3c1;
+      }
+
+      .btn-reset:hover {
+        background-color: #374a66;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>NGOHIEUHM</h2>
+        </div>
+        <div class="sidebar-item">📊 Home</div>
+        <div class="sidebar-item">👤 User Exists</div>
+        <div class="sidebar-item active">👥 User Management</div>
+        <div class="sidebar-item">📋 Report Management</div>
+        <div class="sidebar-item">🔐 Logout</div>
+      </div>
+
+      <div class="content">
+        <div class="form-header">
+          <h1>User Management</h1>
+        </div>
+
+        <div th:if="${error}" class="alert" th:text="${error}"></div>
+
+        <form th:action="@{/users/save}" th:object="${user}" method="post">
+          <input type="hidden" th:field="*{id}" />
+
+          <div class="form-group">
+            <label for="username" class="required">Username</label>
+            <input
+              type="text"
+              id="username"
+              th:field="*{username}"
+              th:classappend="${#fields.hasErrors('username')} ? 'error-field' : ''"
+              placeholder="john_doe"
+            />
+            <div
+              class="error"
+              th:if="${#fields.hasErrors('username')}"
+              th:errors="*{username}"
+            ></div>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName" class="required">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              th:field="*{fullName}"
+              th:classappend="${#fields.hasErrors('fullName')} ? 'error-field' : ''"
+              placeholder="John Doe"
+            />
+            <div
+              class="error"
+              th:if="${#fields.hasErrors('fullName')}"
+              th:errors="*{fullName}"
+            ></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="required">Email</label>
+            <input
+              type="email"
+              id="email"
+              th:field="*{email}"
+              th:classappend="${#fields.hasErrors('email')} ? 'error-field' : ''"
+              placeholder="john.doe@gmail.com"
+            />
+            <div
+              class="error"
+              th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"
+            ></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="required">Password</label>
+            <input
+              type="password"
+              id="password"
+              th:field="*{password}"
+              th:classappend="${#fields.hasErrors('password')} ? 'error-field' : ''"
+              placeholder="••••••"
+            />
+            <div
+              class="error"
+              th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}"
+            ></div>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn-create">Create</button>
+            <button type="submit" class="btn-update">Update</button>
+            <button
+              type="button"
+              class="btn-delete"
+              onclick="
+                if (confirm('Are you sure?'))
+                  window.location.href =
+                    '/users/delete/' + document.getElementById('id').value;
+              "
+            >
+              Delete
+            </button>
+            <button type="reset" class="btn-reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

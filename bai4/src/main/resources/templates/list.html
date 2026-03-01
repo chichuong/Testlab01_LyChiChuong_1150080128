@@ -1,0 +1,122 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organization Units</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .btn-add {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+      }
+
+      .btn-action {
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-edit {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .btn-delete {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Organization Units</h2>
+
+      <a href="/orgunit/add" class="btn-add">Add New Unit</a>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Unit ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="unit : ${units}">
+            <td th:text="${unit.unitId}"></td>
+            <td th:text="${unit.name}"></td>
+            <td th:text="${unit.description}"></td>
+            <td>
+              <a
+                th:href="@{/orgunit/edit/{id}(id=${unit.unitId})}"
+                class="btn-action btn-edit"
+                >Edit</a
+              >
+              <a
+                th:href="@{/orgunit/delete/{id}(id=${unit.unitId})}"
+                class="btn-action btn-delete"
+                onclick="
+                  return confirm('Are you sure you want to delete this unit?');
+                "
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <tr th:if="${#lists.isEmpty(units)}">
+            <td colspan="4" style="text-align: center; color: #999">
+              No units found
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
