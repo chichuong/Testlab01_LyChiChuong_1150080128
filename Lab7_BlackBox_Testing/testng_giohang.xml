@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bai 2.3 - Gio Hang va Checkout Suite" parallel="false">
+
+    <test name="Giỏ hàng và Checkout Tests">
+        <classes>
+            <class name="dtm.tests.TC_GioHangTest"/>
+        </classes>
+    </test>
+
+</suite>

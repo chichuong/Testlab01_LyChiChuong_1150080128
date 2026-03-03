@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản – ShopVN.vn</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; }
+        .container { max-width: 520px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 32px 36px; }
+        h2 { text-align: center; color: #1a56db; margin-bottom: 24px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
+        label .required { color: #e53e3e; }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%; padding: 9px 12px; border: 1px solid #cbd5e0; border-radius: 5px; font-size: 14px; transition: border-color 0.2s;
+        }
+        input:focus { outline: none; border-color: #1a56db; box-shadow: 0 0 0 2px rgba(26,86,219,0.15); }
+        .radio-group { display: flex; gap: 18px; margin-top: 4px; }
+        .radio-group label { font-weight: 400; display: flex; align-items: center; gap: 5px; }
+        .checkbox-group { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+        .checkbox-group label { font-weight: 400; margin-bottom: 0; }
+        .error { color: #e53e3e; font-size: 12px; margin-top: 3px; }
+        .hint { color: #718096; font-size: 12px; margin-top: 2px; }
+        .btn-group { display: flex; gap: 12px; margin-top: 24px; }
+        .btn { flex: 1; padding: 10px; border: none; border-radius: 5px; font-size: 15px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; display: inline-block; }
+        .btn-primary { background: #1a56db; color: #fff; }
+        .btn-primary:disabled { background: #a0aec0; cursor: not-allowed; }
+        .btn-primary:not(:disabled):hover { background: #1e40af; }
+        .btn-secondary { background: #e2e8f0; color: #333; }
+        .btn-secondary:hover { background: #cbd5e0; }
+        .success-msg { background: #c6f6d5; color: #276749; padding: 12px; border-radius: 5px; text-align: center; margin-bottom: 16px; }
+        .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; }
+        .popup-overlay.active { display: flex; }
+        .popup { background: #fff; border-radius: 8px; padding: 28px; max-width: 500px; width: 90%; max-height: 70vh; overflow-y: auto; }
+        .popup h3 { margin-bottom: 12px; color: #1a56db; }
+        .popup p { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+        .popup .btn-close { margin-top: 16px; padding: 8px 24px; background: #1a56db; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Đăng Ký Tài Khoản – ShopVN.vn</h2>
+
+    <div th:if="${success}" class="success-msg">Đăng ký tài khoản thành công!</div>
+
+    <form th:action="@{/dang-ky}" th:object="${registrationForm}" method="post" id="regForm">
+
+        <!-- Họ và tên -->
+        <div class="form-group">
+            <label>Họ và tên <span class="required">(*)</span></label>
+            <input type="text" th:field="*{hoVaTen}" placeholder="Nguyễn Văn A"
+                   pattern="^[a-zA-ZÀ-ỹ\s]{2,50}$" required maxlength="50" />
+            <div class="hint">Chỉ chứa chữ cái (có dấu hoặc không dấu) và dấu cách. 2–50 ký tự.</div>
+            <div th:if="${#fields.hasErrors('hoVaTen')}" class="error" th:errors="*{hoVaTen}"></div>
+        </div>
+
+        <!-- Tên đăng nhập -->
+        <div class="form-group">
+            <label>Tên đăng nhập <span class="required">(*)</span></label>
+            <input type="text" th:field="*{tenDangNhap}" placeholder="nguyenvana"
+                   pattern="^[a-z][a-z0-9_]{4,19}$" required maxlength="20" />
+            <div class="hint">Chữ thường, số, dấu gạch dưới. Bắt đầu bằng chữ cái. 5–20 ký tự. Phải là duy nhất.</div>
+            <div th:if="${#fields.hasErrors('tenDangNhap')}" class="error" th:errors="*{tenDangNhap}"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label>Email <span class="required">(*)</span></label>
+            <input type="email" th:field="*{email}" placeholder="example@email.com" required />
+            <div class="hint">Đúng định dạng email chuẩn RFC 5322. Chưa được đăng ký trong hệ thống.</div>
+            <div th:if="${#fields.hasErrors('email')}" class="error" th:errors="*{email}"></div>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="form-group">
+            <label>Số điện thoại <span class="required">(*)</span></label>
+            <input type="tel" th:field="*{soDienThoai}" placeholder="0987654321"
+                   pattern="^0\d{9}$" required maxlength="10" />
+            <div class="hint">Số Việt Nam: bắt đầu bằng 0, gồm 10 chữ số liên tiếp. VD: 0987654321.</div>
+            <div th:if="${#fields.hasErrors('soDienThoai')}" class="error" th:errors="*{soDienThoai}"></div>
+        </div>
+
+        <!-- Mật khẩu -->
+        <div class="form-group">
+            <label>Mật khẩu <span class="required">(*)</span></label>
+            <input type="password" th:field="*{matKhau}" required minlength="8" maxlength="32" />
+            <div class="hint">8–32 ký tự. Ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số, 1 ký tự đặc biệt (!@#$%...).</div>
+            <div th:if="${#fields.hasErrors('matKhau')}" class="error" th:errors="*{matKhau}"></div>
+        </div>
+
+        <!-- Xác nhận mật khẩu -->
+        <div class="form-group">
+            <label>Xác nhận mật khẩu <span class="required">(*)</span></label>
+            <input type="password" th:field="*{xacNhanMatKhau}" required />
+            <div class="hint">Phải trùng khớp hoàn toàn với trường Mật khẩu.</div>
+            <div th:if="${#fields.hasErrors('xacNhanMatKhau')}" class="error" th:errors="*{xacNhanMatKhau}"></div>
+        </div>
+
+        <!-- Ngày sinh -->
+        <div class="form-group">
+            <label>Ngày sinh</label>
+            <input type="text" th:field="*{ngaySinh}" placeholder="dd/mm/yyyy"
+                   pattern="^(\d{2}/\d{2}/\d{4})?$" maxlength="10" />
+            <div class="hint">Không bắt buộc. Định dạng dd/mm/yyyy. Từ 16 tuổi đến dưới 100 tuổi.</div>
+            <div th:if="${#fields.hasErrors('ngaySinh')}" class="error" th:errors="*{ngaySinh}"></div>
+        </div>
+
+        <!-- Giới tính -->
+        <div class="form-group">
+            <label>Giới tính</label>
+            <div class="radio-group">
+                <label><input type="radio" th:field="*{gioiTinh}" value="Nam" /> Nam</label>
+                <label><input type="radio" th:field="*{gioiTinh}" value="Nữ" /> Nữ</label>
+                <label><input type="radio" th:field="*{gioiTinh}" value="Không muốn tiết lộ" /> Không muốn tiết lộ</label>
+            </div>
+            <div class="hint">Không bắt buộc.</div>
+        </div>
+
+        <!-- Mã giới thiệu -->
+        <div class="form-group">
+            <label>Mã giới thiệu</label>
+            <input type="text" th:field="*{maGioiThieu}" placeholder="AB12CD34"
+                   pattern="^([A-Z0-9]{8})?$" maxlength="8" style="text-transform: uppercase;" />
+            <div class="hint">Không bắt buộc. 8 ký tự chữ hoa và số.</div>
+            <div th:if="${#fields.hasErrors('maGioiThieu')}" class="error" th:errors="*{maGioiThieu}"></div>
+        </div>
+
+        <!-- Đồng ý Điều khoản -->
+        <div class="form-group">
+            <div class="checkbox-group">
+                <input type="checkbox" th:field="*{dongYDieuKhoan}" id="dongYDieuKhoan" required />
+                <label for="dongYDieuKhoan">Đồng ý Điều khoản <span class="required">(*)</span></label>
+            </div>
+            <a href="javascript:void(0)" onclick="document.getElementById('popupDieuKhoan').classList.add('active')"
+               style="font-size: 13px; color: #1a56db; margin-left: 26px;">Xem Điều khoản</a>
+            <div th:if="${#fields.hasErrors('dongYDieuKhoan')}" class="error" th:errors="*{dongYDieuKhoan}"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary" id="btnDangKy">Đăng ký</button>
+            <a th:href="@{/dang-nhap}" class="btn btn-secondary">Đăng nhập</a>
+        </div>
+    </form>
+</div>
+
+<!-- Popup Điều khoản -->
+<div class="popup-overlay" id="popupDieuKhoan">
+    <div class="popup">
+        <h3>Điều khoản sử dụng – ShopVN.vn</h3>
+        <p>Bằng việc đăng ký tài khoản, bạn đồng ý với các điều khoản và điều kiện sử dụng dịch vụ của ShopVN.vn. Chúng tôi cam kết bảo mật thông tin cá nhân của bạn theo quy định pháp luật hiện hành.</p>
+        <p>Bạn có trách nhiệm bảo mật thông tin tài khoản và chịu trách nhiệm với mọi hoạt động diễn ra dưới tài khoản của mình.</p>
+        <button class="btn-close" onclick="document.getElementById('popupDieuKhoan').classList.remove('active')">Đóng</button>
+    </div>
+</div>
+
+<script>
+    // Client-side validation: disable nút Đăng ký khi còn trường bắt buộc trống
+    const form = document.getElementById('regForm');
+    const btn = document.getElementById('btnDangKy');
+    const requiredInputs = form.querySelectorAll('[required]');
+
+    function checkRequired() {
+        let allFilled = true;
+        requiredInputs.forEach(function(input) {
+            if (input.type === 'checkbox') {
+                if (!input.checked) allFilled = false;
+            } else {
+                if (!input.value.trim()) allFilled = false;
+            }
+        });
+        btn.disabled = !allFilled;
+    }
+
+    requiredInputs.forEach(function(input) {
+        input.addEventListener('input', checkRequired);
+        input.addEventListener('change', checkRequired);
+    });
+
+    // Kiểm tra ban đầu
+    checkRequired();
+</script>
+</body>
+</html>
