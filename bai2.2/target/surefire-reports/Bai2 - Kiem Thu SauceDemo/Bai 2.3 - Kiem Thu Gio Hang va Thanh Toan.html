@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>TestNG:  Bai 2.3 - Kiem Thu Gio Hang va Thanh Toan</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Bai 2.3 - Kiem Thu Gio Hang va Thanh Toan</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>25/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Mar 03 15:38:18 ICT 2026</td>
+</tr>
+<tr><td>Total time:</td><td>149 seconds (149918 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.TC_GioHangTest.sauHoanThanhGioHangReset()'><b>sauHoanThanhGioHangReset</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_021: Sau khi hoan thanh - gio hang reset ve 0</td>
+<td></td>
+<td>11</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.checkoutTrongLastName()'><b>checkoutTrongLastName</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_015: Checkout de trong Last Name - bao loi</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.kiemTraShippingInfo()'><b>kiemTraShippingInfo</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_025: Kiem tra Shipping Info = Free Pony Express Delivery!</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.themSanPhamTheoTenKiemTraGio()'><b>themSanPhamTheoTenKiemTraGio</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_004: Them san pham theo ten va kiem tra trong gio</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.kiemTraVoiProblemUser()'><b>kiemTraVoiProblemUser</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_024: Dung problem_user - ghi nhan bug neu phat hien</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.checkoutTrongFirstName()'><b>checkoutTrongFirstName</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_014: Checkout de trong First Name - bao loi</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.them3SanPham()'><b>them3SanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_002: Them 3 san pham - badge = 3</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.sortTenAZ()'><b>sortTenAZ</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_009: Sort Name A-Z</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.checkoutThanhCong()'><b>checkoutThanhCong</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_013: Checkout dien du thong tin - thanh cong</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.sortGiaTangDan()'><b>sortGiaTangDan</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_011: Sort Price low to high</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.sortTenZA()'><b>sortTenZA</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_010: Sort Name Z-A</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.checkoutTrongTatCa()'><b>checkoutTrongTatCa</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_017: Checkout de trong tat ca - bao loi</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.checkoutTrongPostalCode()'><b>checkoutTrongPostalCode</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_016: Checkout de trong Postal Code - bao loi</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.themMotSanPham()'><b>themMotSanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_001: Them 1 san pham - badge = 1</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.themNhieuSanPhamKiemTraDanhSach()'><b>themNhieuSanPhamKiemTraDanhSach</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_005: Them nhieu san pham - kiem tra danh sach trong gio</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.cancelStep1()'><b>cancelStep1</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_018: Cancel o Step 1 - quay lai cart</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.cancelStep2()'><b>cancelStep2</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_019: Cancel o Step 2 - quay lai inventory</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.sortGiaGiamDan()'><b>sortGiaGiamDan</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_012: Sort Price high to low</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.xoaHetKiemTraCheckoutButton()'><b>xoaHetKiemTraCheckoutButton</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_008: Xoa het - nut Checkout van hien thi</td>
+<td></td>
+<td>10</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.kiemTraTongTien()'><b>kiemTraTongTien</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_022: Kiem tra tong tien chinh xac (Item total, Tax 8%, Total)</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.xoaMotSanPham()'><b>xoaMotSanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_006: Xoa 1 san pham - badge giam</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.continueShopping()'><b>continueShopping</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_020: Continue Shopping tu gio hang - quay lai inventory</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.themTatCa6SanPham()'><b>themTatCa6SanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_003: Them tat ca 6 san pham - badge = 6</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.kiemTraTongTienTatCaSanPham()'><b>kiemTraTongTienTatCaSanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_023: Kiem tra tong tien voi tat ca 6 san pham</td>
+<td></td>
+<td>1</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+<tr>
+<td title='tests.TC_GioHangTest.xoaHetSanPham()'><b>xoaHetSanPham</b><br>Test class: tests.TC_GioHangTest<br>Test method: TC_CART_007: Xoa het san pham - gio trong</td>
+<td></td>
+<td>30</td>
+<td>tests.TC_GioHangTest@4f83df68</td></tr>
+</table><p>
+</body>
+</html>

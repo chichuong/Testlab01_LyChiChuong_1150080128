@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>TestNG:  Bai 2.2 - Kiem Thu Dang Nhap</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Bai 2.2 - Kiem Thu Dang Nhap</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>21/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Mar 03 15:37:04 ICT 2026</td>
+</tr>
+<tr><td>Total time:</td><td>73 seconds (73452 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: standard_user , secret_sauce, SAI_THONG_TIN, Username co khoang trang cuoi</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: , , TRUONG_TRONG, De trong ca username va password</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: <script>alert(1)</script>, secret_sauce, SAI_THONG_TIN, Username chua the script (XSS)</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters:  standard_user, secret_sauce, SAI_THONG_TIN, Username co khoang trang dau</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: abc_xyz, xyz_abc, SAI_THONG_TIN, Ca username va password deu sai</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: standard_user, , TRUONG_TRONG, De trong password</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: user@#$%, secret_sauce, SAI_THONG_TIN, Username chua ky tu dac biet @#$%</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: standard_user, sai_mat_khau, SAI_THONG_TIN, Password sai cho user hop le</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: user_khong_ton_tai, matkhau123, SAI_THONG_TIN, Username khong ton tai</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: user'OR'1'='1, secret_sauce, SAI_THONG_TIN, Username chua SQL injection</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: null, null, TRUONG_TRONG, Ca username va password la null</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: locked_out_user, secret_sauce, BI_KHOA, Dang nhap voi tai khoan bi khoa</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: null, secret_sauce, TRUONG_TRONG, Username la null</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: error_user, secret_sauce, THANH_CONG, Dang nhap voi error_user</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: standard_user, secret_sauce, THANH_CONG, Dang nhap voi standard_user</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: visual_user, secret_sauce, THANH_CONG, Dang nhap voi visual_user</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: , secret_sauce, TRUONG_TRONG, De trong username</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: performance_glitch_user, secret_sauce, THANH_CONG, Dang nhap voi performance_glitch_user</td>
+<td></td>
+<td>5</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: standard_user, null, TRUONG_TRONG, Password la null</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters: problem_user, secret_sauce, THANH_CONG, Dang nhap voi problem_user</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+<tr>
+<td title='tests.TC_DangNhapTest.kiemThuDangNhap()'><b>kiemThuDangNhap</b><br>Test class: tests.TC_DangNhapTest<br>Test method: Kiểm thử đăng nhập với DataProvider<br>Parameters:  standard_user , secret_sauce, SAI_THONG_TIN, Username co khoang trang dau va cuoi</td>
+<td></td>
+<td>0</td>
+<td>tests.TC_DangNhapTest@7714e963</td></tr>
+</table><p>
+</body>
+</html>

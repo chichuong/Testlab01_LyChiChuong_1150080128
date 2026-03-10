@@ -5,11 +5,14 @@ import dtm.pages.CartPage;
 import dtm.pages.CheckoutPage;
 import dtm.pages.InventoryPage;
 import dtm.pages.LoginPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +24,6 @@ import java.util.List;
 public class TC_GioHangTest extends BaseTest {
 
     InventoryPage inventoryPage;
-    CartPage cartPage;
 
     /** Đăng nhập trước mỗi test */
     @Override
@@ -32,7 +34,18 @@ public class TC_GioHangTest extends BaseTest {
         loginPage.moTrangDangNhap();
         loginPage.dangNhap("standard_user", "secret_sauce");
         inventoryPage = new InventoryPage(getDriver());
-        cartPage = new CartPage(getDriver());
+    }
+
+    /** Helper: vào giỏ hàng và tạo CartPage mới */
+    private CartPage vaoGioHang() {
+        inventoryPage.goToCart();
+        return new CartPage(getDriver());
+    }
+
+    /** Helper: chờ URL chứa chuỗi mong đợi */
+    private void waitForUrlContains(String urlPart) {
+        new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.urlContains(urlPart));
     }
 
     // ===================== THÊM SẢN PHẨM VÀO GIỎ =====================
@@ -63,7 +76,7 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_004: Thêm 1 SP – kiểm tra danh sách giỏ hàng")
     public void themSanPhamKiemTraDanhSach() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         Assert.assertTrue(cartPage.isProductInCart("Sauce Labs Backpack"),
                 "Sauce Labs Backpack phải có trong giỏ hàng");
         Assert.assertEquals(cartPage.getCartItemCount(), 1);
@@ -74,7 +87,7 @@ public class TC_GioHangTest extends BaseTest {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
         inventoryPage.themSanPhamTheoTen("Sauce Labs Bike Light");
         inventoryPage.themSanPhamTheoTen("Sauce Labs Onesie");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         Assert.assertEquals(cartPage.getCartItemCount(), 3);
         Assert.assertTrue(cartPage.isProductInCart("Sauce Labs Backpack"));
         Assert.assertTrue(cartPage.isProductInCart("Sauce Labs Bike Light"));
@@ -97,8 +110,10 @@ public class TC_GioHangTest extends BaseTest {
     public void xoaSanPhamTuGioHang() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
         inventoryPage.themSanPhamTheoTen("Sauce Labs Bike Light");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.removeProduct("Sauce Labs Backpack");
+        // Re-create CartPage sau khi DOM thay đổi
+        cartPage = new CartPage(getDriver());
         Assert.assertEquals(cartPage.getCartItemCount(), 1);
         Assert.assertFalse(cartPage.isProductInCart("Sauce Labs Backpack"));
         Assert.assertTrue(cartPage.isProductInCart("Sauce Labs Bike Light"));
@@ -115,7 +130,7 @@ public class TC_GioHangTest extends BaseTest {
 
     @Test(groups = { "regression" }, description = "TC_CART_009: Giỏ trống – kiểm tra trang cart")
     public void gioTrongKiemTraCartPage() {
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         Assert.assertTrue(cartPage.isOnCartPage());
         Assert.assertEquals(cartPage.getCartItemCount(), 0,
                 "Giỏ hàng phải trống");
@@ -164,7 +179,7 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_014: Checkout – form trống firstName")
     public void checkoutThieuFirstName() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("", "Nguyen", "700000");
@@ -176,7 +191,7 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_015: Checkout – form trống lastName")
     public void checkoutThieuLastName() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("Van A", "", "700000");
@@ -188,7 +203,7 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_016: Checkout – form trống postalCode")
     public void checkoutThieuPostalCode() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("Van A", "Nguyen", "");
@@ -200,11 +215,12 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_017: Checkout – form điền đủ → chuyển Step 2")
     public void checkoutDienDuChuyenStep2() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("Van A", "Nguyen", "700000");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
         Assert.assertEquals(checkout.getTitle(), "Checkout: Overview",
                 "Phải chuyển đến Step 2 (Overview)");
     }
@@ -214,10 +230,11 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_018: Cancel ở Step 1 → quay lại cart.html")
     public void cancelStep1() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.clickCancel();
+        waitForUrlContains("/cart.html");
         Assert.assertTrue(getDriver().getCurrentUrl().contains("/cart.html"),
                 "Phải quay lại trang giỏ hàng");
     }
@@ -225,13 +242,15 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_019: Cancel ở Step 2 → quay lại inventory.html")
     public void cancelStep2() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("A", "B", "12345");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
         Assert.assertEquals(checkout.getTitle(), "Checkout: Overview");
         checkout.clickCancel();
+        waitForUrlContains("/inventory.html");
         Assert.assertTrue(getDriver().getCurrentUrl().contains("/inventory.html"),
                 "Phải quay lại trang inventory");
     }
@@ -239,8 +258,9 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_020: Continue Shopping → quay lại inventory")
     public void continueShopping() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickContinueShopping();
+        waitForUrlContains("/inventory.html");
         Assert.assertTrue(getDriver().getCurrentUrl().contains("/inventory.html"),
                 "Phải quay lại inventory");
     }
@@ -250,13 +270,15 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "smoke" }, description = "TC_CART_021: Checkout flow hoàn chỉnh – thành công")
     public void checkoutFlowThanhCong() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("Nguyen", "Van A", "700000");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
         Assert.assertEquals(checkout.getTitle(), "Checkout: Overview");
         checkout.clickFinish();
+        waitForUrlContains("checkout-complete");
         Assert.assertTrue(checkout.isOrderComplete());
         Assert.assertEquals(checkout.getCompleteHeader(), "Thank you for your order!");
     }
@@ -265,15 +287,17 @@ public class TC_GioHangTest extends BaseTest {
     public void sauHoanThanhGioHangReset() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Backpack");
         inventoryPage.themSanPhamTheoTen("Sauce Labs Bike Light");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("A", "B", "12345");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
         checkout.clickFinish();
+        waitForUrlContains("checkout-complete");
         Assert.assertTrue(checkout.isOrderComplete());
-        // Click Back Home → về inventory
         checkout.clickBackHome();
+        waitForUrlContains("/inventory.html");
         InventoryPage inv2 = new InventoryPage(getDriver());
         Assert.assertEquals(inv2.laySoLuongBadge(), 0,
                 "Giỏ hàng phải reset về 0 sau khi hoàn thành checkout");
@@ -282,12 +306,14 @@ public class TC_GioHangTest extends BaseTest {
     @Test(groups = { "regression" }, description = "TC_CART_023: Complete page – header và content đúng")
     public void completePageContent() {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Onesie");
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("A", "B", "12345");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
         checkout.clickFinish();
+        waitForUrlContains("checkout-complete");
         Assert.assertEquals(checkout.getCompleteHeader(), "Thank you for your order!");
         String text = checkout.getCompleteText();
         Assert.assertNotNull(text);
@@ -306,11 +332,12 @@ public class TC_GioHangTest extends BaseTest {
         inventoryPage.themSanPhamTheoTen("Sauce Labs Bolt T-Shirt"); // $15.99
 
         // Vào trang checkout step 2
-        inventoryPage.goToCart();
+        CartPage cartPage = vaoGioHang();
         cartPage.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(getDriver());
         checkout.fillCheckoutInfo("Nguyen", "Van A", "700000");
         checkout.clickContinue();
+        waitForUrlContains("checkout-step-two");
 
         // Lấy itemTotal, tax, total từ trang
         double itemTotal = checkout.getItemTotal();
@@ -341,8 +368,12 @@ public class TC_GioHangTest extends BaseTest {
 
     @Test(groups = { "regression" }, description = "TC_CART_025: problem_user – ghi nhận bug nếu phát hiện")
     public void problemUserBug() {
-        // Đăng xuất standard_user và đăng nhập problem_user
-        getDriver().get("https://www.saucedemo.com/");
+        // setUp() đã đăng nhập standard_user → cần logout trước
+        inventoryPage.logout();
+
+        // Đăng nhập lại với problem_user
+        new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.urlContains("saucedemo.com"));
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.dangNhap("problem_user", "secret_sauce");
 

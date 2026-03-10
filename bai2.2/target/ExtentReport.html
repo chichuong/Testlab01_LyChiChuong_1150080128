@@ -1,0 +1,3846 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bai 2 - Kiem Thu SauceDemo</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css">.summary-box { display: inline-block; padding: 15px 30px; margin: 8px; border-radius: 8px; color: white; font-size: 18px; font-weight: bold; text-align: center; min-width: 120px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }.summary-total { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }.summary-pass { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }.summary-fail { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }.summary-skip { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }.summary-container { text-align: center; padding: 20px; margin-bottom: 20px; }.summary-title { font-size: 22px; font-weight: bold; color: #2c3e50; margin-bottom: 15px; }.badge-primary { background-color: #4723d9; }.header { background-color: #2c3e50; }.nav-bar { background-color: #34495e; }body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }.test-content .test-steps { font-size: 14px; }.test-name { font-weight: 600; font-size: 15px; }.category-list .category { padding: 6px 12px; border-radius: 4px; color: white; font-weight: 500; }</style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">BAO CAO KIEM THU SAUCEDEMO - BAI 2.2 & 2.3</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">thg 3 3, 2026 03:37:04 CH</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">2.3CHECKOUTFORM</a><a class="dropdown-item" href="#">2.3TINHTOANTIEN</a><a class="dropdown-item" href="#">2.3PROBLEMUSER</a><a class="dropdown-item" href="#">2.2TRUONGTRONG</a><a class="dropdown-item" href="#">2.3THEMSANPHAM</a><a class="dropdown-item" href="#">2.3DIEUHUONG</a><a class="dropdown-item" href="#">2.2TAIKHOANBIKHOA</a><a class="dropdown-item" href="#">2.2SAITHONGTIN</a><a class="dropdown-item" href="#">2.2DANGNHAPTHANHCONG</a><a class="dropdown-item" href="#">2.3HOANTHANHDON</a><a class="dropdown-item" href="#">BANGTONGHOP</a><a class="dropdown-item" href="#">2.3SORTSANPHAM</a><a class="dropdown-item" href="#">2.3XOASANPHAM</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="2.2DANGNHAPTHANHCONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi standard_user</p>
+            <p class="text-sm">
+              <span>15:37:07</span> / <span>00:00:00:799</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi standard_user</h5>
+<span class='badge badge-success'>03.03.2026 15:37:07</span>
+<span class='badge badge-danger'>03.03.2026 15:37:08</span>
+<span class='badge badge-default'>00:00:00:799</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2DANGNHAPTHANHCONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:07</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:07</td>
+        <td>
+          Username: <b>standard_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:07</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:07</td>
+        <td>
+          Ket qua mong doi: <span style='color:green;font-weight:bold'>DANG NHAP THANH CONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:08</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="2.2DANGNHAPTHANHCONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi problem_user</p>
+            <p class="text-sm">
+              <span>15:37:11</span> / <span>00:00:00:936</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi problem_user</h5>
+<span class='badge badge-success'>03.03.2026 15:37:11</span>
+<span class='badge badge-danger'>03.03.2026 15:37:12</span>
+<span class='badge badge-default'>00:00:00:936</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2DANGNHAPTHANHCONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:11</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:11</td>
+        <td>
+          Username: <b>problem_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:11</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:11</td>
+        <td>
+          Ket qua mong doi: <span style='color:green;font-weight:bold'>DANG NHAP THANH CONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:12</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag="2.2DANGNHAPTHANHCONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi performance_glitch_user</p>
+            <p class="text-sm">
+              <span>15:37:15</span> / <span>00:00:05:753</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi performance_glitch_user</h5>
+<span class='badge badge-success'>03.03.2026 15:37:15</span>
+<span class='badge badge-danger'>03.03.2026 15:37:21</span>
+<span class='badge badge-default'>00:00:05:753</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2DANGNHAPTHANHCONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:15</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:15</td>
+        <td>
+          Username: <b>performance_glitch_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:15</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:15</td>
+        <td>
+          Ket qua mong doi: <span style='color:green;font-weight:bold'>DANG NHAP THANH CONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:21</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag="2.2DANGNHAPTHANHCONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi error_user</p>
+            <p class="text-sm">
+              <span>15:37:23</span> / <span>00:00:00:762</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi error_user</h5>
+<span class='badge badge-success'>03.03.2026 15:37:23</span>
+<span class='badge badge-danger'>03.03.2026 15:37:24</span>
+<span class='badge badge-default'>00:00:00:762</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2DANGNHAPTHANHCONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:23</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:23</td>
+        <td>
+          Username: <b>error_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:23</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:23</td>
+        <td>
+          Ket qua mong doi: <span style='color:green;font-weight:bold'>DANG NHAP THANH CONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:24</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag="2.2DANGNHAPTHANHCONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi visual_user</p>
+            <p class="text-sm">
+              <span>15:37:26</span> / <span>00:00:00:787</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi visual_user</h5>
+<span class='badge badge-success'>03.03.2026 15:37:26</span>
+<span class='badge badge-danger'>03.03.2026 15:37:27</span>
+<span class='badge badge-default'>00:00:00:787</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2DANGNHAPTHANHCONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:26</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:26</td>
+        <td>
+          Username: <b>visual_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:26</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:26</td>
+        <td>
+          Ket qua mong doi: <span style='color:green;font-weight:bold'>DANG NHAP THANH CONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:27</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="2.2TAIKHOANBIKHOA"
+          device="">
+          <div class="test-detail">
+            <p class="name">Dang nhap voi tai khoan bi khoa</p>
+            <p class="text-sm">
+              <span>15:37:30</span> / <span>00:00:00:807</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dang nhap voi tai khoan bi khoa</h5>
+<span class='badge badge-success'>03.03.2026 15:37:30</span>
+<span class='badge badge-danger'>03.03.2026 15:37:31</span>
+<span class='badge badge-default'>00:00:00:807</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TAIKHOANBIKHOA</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:30</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:30</td>
+        <td>
+          Username: <b>locked_out_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:30</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:30</td>
+        <td>
+          Ket qua mong doi: <span style='color:red;font-weight:bold'>TAI KHOAN BI KHOA</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:31</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username khong ton tai</p>
+            <p class="text-sm">
+              <span>15:37:33</span> / <span>00:00:00:752</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username khong ton tai</h5>
+<span class='badge badge-success'>03.03.2026 15:37:33</span>
+<span class='badge badge-danger'>03.03.2026 15:37:34</span>
+<span class='badge badge-default'>00:00:00:752</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:33</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:33</td>
+        <td>
+          Username: <b>user_khong_ton_tai</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:33</td>
+        <td>
+          Password: <b>matkhau123</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:33</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:34</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Password sai cho user hop le</p>
+            <p class="text-sm">
+              <span>15:37:36</span> / <span>00:00:00:877</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Password sai cho user hop le</h5>
+<span class='badge badge-success'>03.03.2026 15:37:36</span>
+<span class='badge badge-danger'>03.03.2026 15:37:37</span>
+<span class='badge badge-default'>00:00:00:877</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:36</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:36</td>
+        <td>
+          Username: <b>standard_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:36</td>
+        <td>
+          Password: <b>sai_mat_khau</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:36</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:37</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Ca username va password deu sai</p>
+            <p class="text-sm">
+              <span>15:37:40</span> / <span>00:00:00:800</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Ca username va password deu sai</h5>
+<span class='badge badge-success'>03.03.2026 15:37:40</span>
+<span class='badge badge-danger'>03.03.2026 15:37:40</span>
+<span class='badge badge-default'>00:00:00:800</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:40</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:40</td>
+        <td>
+          Username: <b>abc_xyz</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:40</td>
+        <td>
+          Password: <b>xyz_abc</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:40</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:40</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">De trong username</p>
+            <p class="text-sm">
+              <span>15:37:43</span> / <span>00:00:00:734</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">De trong username</h5>
+<span class='badge badge-success'>03.03.2026 15:37:43</span>
+<span class='badge badge-danger'>03.03.2026 15:37:43</span>
+<span class='badge badge-default'>00:00:00:734</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:43</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:43</td>
+        <td>
+          Username: <b></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:43</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:43</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:43</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">De trong password</p>
+            <p class="text-sm">
+              <span>15:37:46</span> / <span>00:00:00:748</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">De trong password</h5>
+<span class='badge badge-success'>03.03.2026 15:37:46</span>
+<span class='badge badge-danger'>03.03.2026 15:37:46</span>
+<span class='badge badge-default'>00:00:00:748</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:46</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:46</td>
+        <td>
+          Username: <b>standard_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:46</td>
+        <td>
+          Password: <b></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:46</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:46</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">De trong ca username va password</p>
+            <p class="text-sm">
+              <span>15:37:49</span> / <span>00:00:00:817</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">De trong ca username va password</h5>
+<span class='badge badge-success'>03.03.2026 15:37:49</span>
+<span class='badge badge-danger'>03.03.2026 15:37:49</span>
+<span class='badge badge-default'>00:00:00:817</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:49</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:49</td>
+        <td>
+          Username: <b></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:49</td>
+        <td>
+          Password: <b></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:49</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:49</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username chua ky tu dac biet @#$%</p>
+            <p class="text-sm">
+              <span>15:37:52</span> / <span>00:00:00:752</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username chua ky tu dac biet @#$%</h5>
+<span class='badge badge-success'>03.03.2026 15:37:52</span>
+<span class='badge badge-danger'>03.03.2026 15:37:53</span>
+<span class='badge badge-default'>00:00:00:752</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:52</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:52</td>
+        <td>
+          Username: <b>user@#$%</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:52</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:52</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:53</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username chua the script (XSS)</p>
+            <p class="text-sm">
+              <span>15:37:55</span> / <span>00:00:00:750</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username chua the script (XSS)</h5>
+<span class='badge badge-success'>03.03.2026 15:37:55</span>
+<span class='badge badge-danger'>03.03.2026 15:37:56</span>
+<span class='badge badge-default'>00:00:00:750</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:55</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:55</td>
+        <td>
+          Username: <b>&lt;script&gt;alert(1)&lt;/script&gt;</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:55</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:55</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:56</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username chua SQL injection</p>
+            <p class="text-sm">
+              <span>15:37:58</span> / <span>00:00:00:727</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username chua SQL injection</h5>
+<span class='badge badge-success'>03.03.2026 15:37:58</span>
+<span class='badge badge-danger'>03.03.2026 15:37:59</span>
+<span class='badge badge-default'>00:00:00:727</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:58</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:58</td>
+        <td>
+          Username: <b>user'OR'1'='1</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:58</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:37:58</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:37:59</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username co khoang trang dau</p>
+            <p class="text-sm">
+              <span>15:38:01</span> / <span>00:00:00:828</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username co khoang trang dau</h5>
+<span class='badge badge-success'>03.03.2026 15:38:01</span>
+<span class='badge badge-danger'>03.03.2026 15:38:02</span>
+<span class='badge badge-default'>00:00:00:828</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:01</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:01</td>
+        <td>
+          Username: <b> standard_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:01</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:01</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:02</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username co khoang trang cuoi</p>
+            <p class="text-sm">
+              <span>15:38:05</span> / <span>00:00:00:741</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username co khoang trang cuoi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:05</span>
+<span class='badge badge-danger'>03.03.2026 15:38:06</span>
+<span class='badge badge-default'>00:00:00:741</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:05</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:05</td>
+        <td>
+          Username: <b>standard_user </b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:05</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:05</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:06</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag="2.2SAITHONGTIN"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username co khoang trang dau va cuoi</p>
+            <p class="text-sm">
+              <span>15:38:08</span> / <span>00:00:00:809</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username co khoang trang dau va cuoi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:08</span>
+<span class='badge badge-danger'>03.03.2026 15:38:09</span>
+<span class='badge badge-default'>00:00:00:809</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2SAITHONGTIN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:08</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:08</td>
+        <td>
+          Username: <b> standard_user </b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:08</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:08</td>
+        <td>
+          Ket qua mong doi: <span style='color:orange;font-weight:bold'>SAI THONG TIN DANG NHAP</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:09</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Username la null</p>
+            <p class="text-sm">
+              <span>15:38:11</span> / <span>00:00:00:714</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Username la null</h5>
+<span class='badge badge-success'>03.03.2026 15:38:11</span>
+<span class='badge badge-danger'>03.03.2026 15:38:12</span>
+<span class='badge badge-default'>00:00:00:714</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:11</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:11</td>
+        <td>
+          Username: <b>null</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:11</td>
+        <td>
+          Password: <b>secret_sauce</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:11</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:12</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Password la null</p>
+            <p class="text-sm">
+              <span>15:38:14</span> / <span>00:00:00:754</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Password la null</h5>
+<span class='badge badge-success'>03.03.2026 15:38:14</span>
+<span class='badge badge-danger'>03.03.2026 15:38:15</span>
+<span class='badge badge-default'>00:00:00:754</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:14</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:14</td>
+        <td>
+          Username: <b>standard_user</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:14</td>
+        <td>
+          Password: <b>null</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:14</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:15</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag="2.2TRUONGTRONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">Ca username va password la null</p>
+            <p class="text-sm">
+              <span>15:38:17</span> / <span>00:00:00:653</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Ca username va password la null</h5>
+<span class='badge badge-success'>03.03.2026 15:38:17</span>
+<span class='badge badge-danger'>03.03.2026 15:38:18</span>
+<span class='badge badge-default'>00:00:00:653</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.2TRUONGTRONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:17</td>
+        <td>
+          <b>[BAI 2.2 - DANG NHAP]</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:17</td>
+        <td>
+          Username: <b>null</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:17</td>
+        <td>
+          Password: <b>null</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:17</td>
+        <td>
+          Ket qua mong doi: <span style='color:#e67e22;font-weight:bold'>TRUONG BAT BUOC BO TRONG</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:18</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag="BANGTONGHOP"
+          device="">
+          <div class="test-detail">
+            <p class="name">TONG HOP KET QUA</p>
+            <p class="text-sm">
+              <span>15:38:18</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TONG HOP KET QUA</h5>
+<span class='badge badge-success'>03.03.2026 15:38:18</span>
+<span class='badge badge-danger'>03.03.2026 15:38:18</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">BANGTONGHOP</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:18</td>
+        <td>
+          <div class='summary-container'>  <div class='summary-title'>TONG HOP KET QUA KIEM THU</div>  <div class='summary-box summary-total'>TONG: 21</div>  <div class='summary-box summary-pass'>PASS: 21</div>  <div class='summary-box summary-fail'>FAIL: 0</div>  <div class='summary-box summary-skip'>SKIP: 0</div>  <br/><br/>  <table style='margin:auto;border-collapse:collapse;min-width:500px;box-shadow:0 2px 8px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;'>    <tr style='background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;'>      <th style='padding:12px 25px;font-size:16px;'>Trang thai</th>      <th style='padding:12px 25px;font-size:16px;'>So luong</th>      <th style='padding:12px 25px;font-size:16px;'>Ti le</th>    </tr>    <tr style='background:#d5f5e3;'>      <td style='padding:10px 25px;font-weight:bold;color:#27ae60;font-size:15px;'>PASS</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>21</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>100,0%</td>    </tr>    <tr style='background:#fadbd8;'>      <td style='padding:10px 25px;font-weight:bold;color:#e74c3c;font-size:15px;'>FAIL</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>0</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>0,0%</td>    </tr>    <tr style='background:#fdebd0;'>      <td style='padding:10px 25px;font-weight:bold;color:#f39c12;font-size:15px;'>SKIP</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>0</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>0,0%</td>    </tr>    <tr style='background:#eaf2f8;border-top:2px solid #2c3e50;'>      <td style='padding:10px 25px;font-weight:bold;color:#2c3e50;font-size:15px;'>TONG CONG</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;color:#2c3e50;'>21</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;font-weight:bold;'>100%</td>    </tr>  </table></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:18</td>
+        <td>
+          Tat ca 21 test case deu PASS!
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag="2.3DIEUHUONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_018: Cancel o Step 1 - quay lai cart</p>
+            <p class="text-sm">
+              <span>15:38:21</span> / <span>00:00:00:234</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_018: Cancel o Step 1 - quay lai cart</h5>
+<span class='badge badge-success'>03.03.2026 15:38:21</span>
+<span class='badge badge-danger'>03.03.2026 15:38:21</span>
+<span class='badge badge-default'>00:00:00:234</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3DIEUHUONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:21</td>
+        <td>
+          <b>[BAI 2.3 - DIEU HUONG]</b> Kiem tra cancel / quay lai
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:21</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag="2.3DIEUHUONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_019: Cancel o Step 2 - quay lai inventory</p>
+            <p class="text-sm">
+              <span>15:38:25</span> / <span>00:00:01:051</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_019: Cancel o Step 2 - quay lai inventory</h5>
+<span class='badge badge-success'>03.03.2026 15:38:25</span>
+<span class='badge badge-danger'>03.03.2026 15:38:26</span>
+<span class='badge badge-default'>00:00:01:051</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3DIEUHUONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:25</td>
+        <td>
+          <b>[BAI 2.3 - DIEU HUONG]</b> Kiem tra cancel / quay lai
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:26</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag="2.3CHECKOUTFORM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_013: Checkout dien du thong tin - thanh cong</p>
+            <p class="text-sm">
+              <span>15:38:29</span> / <span>00:00:01:510</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_013: Checkout dien du thong tin - thanh cong</h5>
+<span class='badge badge-success'>03.03.2026 15:38:29</span>
+<span class='badge badge-danger'>03.03.2026 15:38:31</span>
+<span class='badge badge-default'>00:00:01:510</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3CHECKOUTFORM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:29</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra form checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:31</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag="2.3CHECKOUTFORM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_014: Checkout de trong First Name - bao loi</p>
+            <p class="text-sm">
+              <span>15:38:35</span> / <span>00:00:01:016</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_014: Checkout de trong First Name - bao loi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:35</span>
+<span class='badge badge-danger'>03.03.2026 15:38:36</span>
+<span class='badge badge-default'>00:00:01:016</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3CHECKOUTFORM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:35</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra form checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:36</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag="2.3CHECKOUTFORM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_015: Checkout de trong Last Name - bao loi</p>
+            <p class="text-sm">
+              <span>15:38:39</span> / <span>00:00:01:001</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_015: Checkout de trong Last Name - bao loi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:39</span>
+<span class='badge badge-danger'>03.03.2026 15:38:40</span>
+<span class='badge badge-default'>00:00:01:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3CHECKOUTFORM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:39</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra form checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:40</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author=""
+          tag="2.3CHECKOUTFORM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_016: Checkout de trong Postal Code - bao loi</p>
+            <p class="text-sm">
+              <span>15:38:43</span> / <span>00:00:00:958</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_016: Checkout de trong Postal Code - bao loi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:43</span>
+<span class='badge badge-danger'>03.03.2026 15:38:44</span>
+<span class='badge badge-default'>00:00:00:958</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3CHECKOUTFORM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:43</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra form checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:44</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author=""
+          tag="2.3CHECKOUTFORM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_017: Checkout de trong tat ca - bao loi</p>
+            <p class="text-sm">
+              <span>15:38:48</span> / <span>00:00:01:170</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_017: Checkout de trong tat ca - bao loi</h5>
+<span class='badge badge-success'>03.03.2026 15:38:48</span>
+<span class='badge badge-danger'>03.03.2026 15:38:49</span>
+<span class='badge badge-default'>00:00:01:170</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3CHECKOUTFORM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:48</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra form checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:49</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag="2.3DIEUHUONG"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_020: Continue Shopping tu gio hang - quay lai inventory</p>
+            <p class="text-sm">
+              <span>15:38:52</span> / <span>00:00:00:490</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_020: Continue Shopping tu gio hang - quay lai inventory</h5>
+<span class='badge badge-success'>03.03.2026 15:38:52</span>
+<span class='badge badge-danger'>03.03.2026 15:38:52</span>
+<span class='badge badge-default'>00:00:00:490</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3DIEUHUONG</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:52</td>
+        <td>
+          <b>[BAI 2.3 - DIEU HUONG]</b> Kiem tra cancel / quay lai
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:52</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag="2.3TINHTOANTIEN"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_025: Kiem tra Shipping Info = Free Pony Express Delivery!</p>
+            <p class="text-sm">
+              <span>15:38:55</span> / <span>00:00:00:966</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_025: Kiem tra Shipping Info = Free Pony Express Delivery!</h5>
+<span class='badge badge-success'>03.03.2026 15:38:55</span>
+<span class='badge badge-danger'>03.03.2026 15:38:56</span>
+<span class='badge badge-default'>00:00:00:966</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3TINHTOANTIEN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:38:55</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra tinh toan tong tien
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:38:56</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag="2.3TINHTOANTIEN"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_022: Kiem tra tong tien chinh xac (Item total, Tax 8%, Total)</p>
+            <p class="text-sm">
+              <span>15:39:00</span> / <span>00:00:01:159</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_022: Kiem tra tong tien chinh xac (Item total, Tax 8%, Total)</h5>
+<span class='badge badge-success'>03.03.2026 15:39:00</span>
+<span class='badge badge-danger'>03.03.2026 15:39:01</span>
+<span class='badge badge-default'>00:00:01:159</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3TINHTOANTIEN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:00</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra tinh toan tong tien
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:01</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag="2.3TINHTOANTIEN"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_023: Kiem tra tong tien voi tat ca 6 san pham</p>
+            <p class="text-sm">
+              <span>15:39:04</span> / <span>00:00:01:265</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_023: Kiem tra tong tien voi tat ca 6 san pham</h5>
+<span class='badge badge-success'>03.03.2026 15:39:04</span>
+<span class='badge badge-danger'>03.03.2026 15:39:06</span>
+<span class='badge badge-default'>00:00:01:265</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3TINHTOANTIEN</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:04</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra tinh toan tong tien
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:06</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag="2.3PROBLEMUSER"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_024: Dung problem_user - ghi nhan bug neu phat hien</p>
+            <p class="text-sm">
+              <span>15:39:09</span> / <span>00:00:01:326</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_024: Dung problem_user - ghi nhan bug neu phat hien</h5>
+<span class='badge badge-success'>03.03.2026 15:39:09</span>
+<span class='badge badge-danger'>03.03.2026 15:39:10</span>
+<span class='badge badge-default'>00:00:01:326</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3PROBLEMUSER</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:09</td>
+        <td>
+          <b>[BAI 2.3 - BUG]</b> Kiem tra voi problem_user
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:10</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag="2.3HOANTHANHDON"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_021: Sau khi hoan thanh - gio hang reset ve 0</p>
+            <p class="text-sm">
+              <span>15:39:13</span> / <span>00:00:11:632</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_021: Sau khi hoan thanh - gio hang reset ve 0</h5>
+<span class='badge badge-success'>03.03.2026 15:39:13</span>
+<span class='badge badge-danger'>03.03.2026 15:39:25</span>
+<span class='badge badge-default'>00:00:11:632</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3HOANTHANHDON</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:13</td>
+        <td>
+          <b>[BAI 2.3 - THANH TOAN]</b> Kiem tra hoan thanh don hang
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:25</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag="2.3SORTSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_012: Sort Price high to low</p>
+            <p class="text-sm">
+              <span>15:39:28</span> / <span>00:00:00:132</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_012: Sort Price high to low</h5>
+<span class='badge badge-success'>03.03.2026 15:39:28</span>
+<span class='badge badge-danger'>03.03.2026 15:39:28</span>
+<span class='badge badge-default'>00:00:00:132</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3SORTSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:28</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra sap xep san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:28</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="37"
+          author=""
+          tag="2.3SORTSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_011: Sort Price low to high</p>
+            <p class="text-sm">
+              <span>15:39:31</span> / <span>00:00:00:118</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_011: Sort Price low to high</h5>
+<span class='badge badge-success'>03.03.2026 15:39:31</span>
+<span class='badge badge-danger'>03.03.2026 15:39:31</span>
+<span class='badge badge-default'>00:00:00:118</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3SORTSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:31</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra sap xep san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:31</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="38"
+          author=""
+          tag="2.3SORTSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_009: Sort Name A-Z</p>
+            <p class="text-sm">
+              <span>15:39:34</span> / <span>00:00:00:103</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_009: Sort Name A-Z</h5>
+<span class='badge badge-success'>03.03.2026 15:39:34</span>
+<span class='badge badge-danger'>03.03.2026 15:39:35</span>
+<span class='badge badge-default'>00:00:00:103</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3SORTSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:34</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra sap xep san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:35</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author=""
+          tag="2.3SORTSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_010: Sort Name Z-A</p>
+            <p class="text-sm">
+              <span>15:39:38</span> / <span>00:00:00:141</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_010: Sort Name Z-A</h5>
+<span class='badge badge-success'>03.03.2026 15:39:38</span>
+<span class='badge badge-danger'>03.03.2026 15:39:38</span>
+<span class='badge badge-default'>00:00:00:141</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3SORTSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:38</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra sap xep san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:38</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author=""
+          tag="2.3THEMSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_002: Them 3 san pham - badge = 3</p>
+            <p class="text-sm">
+              <span>15:39:41</span> / <span>00:00:00:182</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_002: Them 3 san pham - badge = 3</h5>
+<span class='badge badge-success'>03.03.2026 15:39:41</span>
+<span class='badge badge-danger'>03.03.2026 15:39:41</span>
+<span class='badge badge-default'>00:00:00:182</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3THEMSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:41</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra them san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:41</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author=""
+          tag="2.3THEMSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_001: Them 1 san pham - badge = 1</p>
+            <p class="text-sm">
+              <span>15:39:45</span> / <span>00:00:00:089</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_001: Them 1 san pham - badge = 1</h5>
+<span class='badge badge-success'>03.03.2026 15:39:45</span>
+<span class='badge badge-danger'>03.03.2026 15:39:45</span>
+<span class='badge badge-default'>00:00:00:089</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3THEMSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:45</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra them san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:45</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="42"
+          author=""
+          tag="2.3THEMSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_005: Them nhieu san pham - kiem tra danh sach trong gio</p>
+            <p class="text-sm">
+              <span>15:39:48</span> / <span>00:00:00:227</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_005: Them nhieu san pham - kiem tra danh sach trong gio</h5>
+<span class='badge badge-success'>03.03.2026 15:39:48</span>
+<span class='badge badge-danger'>03.03.2026 15:39:49</span>
+<span class='badge badge-default'>00:00:00:227</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3THEMSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:48</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra them san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:49</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author=""
+          tag="2.3THEMSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_004: Them san pham theo ten va kiem tra trong gio</p>
+            <p class="text-sm">
+              <span>15:39:52</span> / <span>00:00:00:141</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_004: Them san pham theo ten va kiem tra trong gio</h5>
+<span class='badge badge-success'>03.03.2026 15:39:52</span>
+<span class='badge badge-danger'>03.03.2026 15:39:52</span>
+<span class='badge badge-default'>00:00:00:141</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3THEMSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:52</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra them san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:52</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="44"
+          author=""
+          tag="2.3THEMSANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_003: Them tat ca 6 san pham - badge = 6</p>
+            <p class="text-sm">
+              <span>15:39:55</span> / <span>00:00:00:274</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_003: Them tat ca 6 san pham - badge = 6</h5>
+<span class='badge badge-success'>03.03.2026 15:39:55</span>
+<span class='badge badge-danger'>03.03.2026 15:39:56</span>
+<span class='badge badge-default'>00:00:00:274</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=44</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3THEMSANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:55</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra them san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:39:56</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="45"
+          author=""
+          tag="2.3XOASANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_008: Xoa het - nut Checkout van hien thi</p>
+            <p class="text-sm">
+              <span>15:39:59</span> / <span>00:00:10:410</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_008: Xoa het - nut Checkout van hien thi</h5>
+<span class='badge badge-success'>03.03.2026 15:39:59</span>
+<span class='badge badge-danger'>03.03.2026 15:40:09</span>
+<span class='badge badge-default'>00:00:10:410</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3XOASANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:39:59</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra xoa san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:40:09</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="46"
+          author=""
+          tag="2.3XOASANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_007: Xoa het san pham - gio trong</p>
+            <p class="text-sm">
+              <span>15:40:13</span> / <span>00:00:30:441</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_007: Xoa het san pham - gio trong</h5>
+<span class='badge badge-success'>03.03.2026 15:40:13</span>
+<span class='badge badge-danger'>03.03.2026 15:40:44</span>
+<span class='badge badge-default'>00:00:30:441</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=46</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3XOASANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:40:13</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra xoa san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:40:44</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="47"
+          author=""
+          tag="2.3XOASANPHAM"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_CART_006: Xoa 1 san pham - badge giam</p>
+            <p class="text-sm">
+              <span>15:40:48</span> / <span>00:00:00:310</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_CART_006: Xoa 1 san pham - badge giam</h5>
+<span class='badge badge-success'>03.03.2026 15:40:48</span>
+<span class='badge badge-danger'>03.03.2026 15:40:48</span>
+<span class='badge badge-default'>00:00:00:310</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">2.3XOASANPHAM</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:40:48</td>
+        <td>
+          <b>[BAI 2.3 - GIO HANG]</b> Kiem tra xoa san pham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:40:48</td>
+        <td>
+          <span style='color:green;font-weight:bold'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="48"
+          author=""
+          tag="BANGTONGHOP"
+          device="">
+          <div class="test-detail">
+            <p class="name">TONG HOP KET QUA</p>
+            <p class="text-sm">
+              <span>15:40:48</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TONG HOP KET QUA</h5>
+<span class='badge badge-success'>03.03.2026 15:40:48</span>
+<span class='badge badge-danger'>03.03.2026 15:40:48</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=48</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">BANGTONGHOP</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>15:40:48</td>
+        <td>
+          <div class='summary-container'>  <div class='summary-title'>TONG HOP KET QUA KIEM THU</div>  <div class='summary-box summary-total'>TONG: 46</div>  <div class='summary-box summary-pass'>PASS: 46</div>  <div class='summary-box summary-fail'>FAIL: 0</div>  <div class='summary-box summary-skip'>SKIP: 0</div>  <br/><br/>  <table style='margin:auto;border-collapse:collapse;min-width:500px;box-shadow:0 2px 8px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;'>    <tr style='background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;'>      <th style='padding:12px 25px;font-size:16px;'>Trang thai</th>      <th style='padding:12px 25px;font-size:16px;'>So luong</th>      <th style='padding:12px 25px;font-size:16px;'>Ti le</th>    </tr>    <tr style='background:#d5f5e3;'>      <td style='padding:10px 25px;font-weight:bold;color:#27ae60;font-size:15px;'>PASS</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>46</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>100,0%</td>    </tr>    <tr style='background:#fadbd8;'>      <td style='padding:10px 25px;font-weight:bold;color:#e74c3c;font-size:15px;'>FAIL</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>0</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>0,0%</td>    </tr>    <tr style='background:#fdebd0;'>      <td style='padding:10px 25px;font-weight:bold;color:#f39c12;font-size:15px;'>SKIP</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;'>0</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;'>0,0%</td>    </tr>    <tr style='background:#eaf2f8;border-top:2px solid #2c3e50;'>      <td style='padding:10px 25px;font-weight:bold;color:#2c3e50;font-size:15px;'>TONG CONG</td>      <td style='padding:10px 25px;text-align:center;font-size:20px;font-weight:bold;color:#2c3e50;'>46</td>      <td style='padding:10px 25px;text-align:center;font-size:15px;font-weight:bold;'>100%</td>    </tr>  </table></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:40:48</td>
+        <td>
+          Tat ca 46 test case deu PASS!
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">13</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">2.3CHECKOUTFORM</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3CHECKOUTFORM</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:29 CH</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>TC_CART_013: Checkout dien du thong tin - thanh cong</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:35 CH</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>TC_CART_014: Checkout de trong First Name - bao loi</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:39 CH</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>TC_CART_015: Checkout de trong Last Name - bao loi</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:43 CH</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>TC_CART_016: Checkout de trong Postal Code - bao loi</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:48 CH</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>TC_CART_017: Checkout de trong tat ca - bao loi</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">2.3TINHTOANTIEN</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3TINHTOANTIEN</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:55 CH</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>TC_CART_025: Kiem tra Shipping Info = Free Pony Express Delivery!</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:00 CH</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>TC_CART_022: Kiem tra tong tien chinh xac (Item total, Tax 8%, Total)</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:04 CH</td>
+<td>
+<a href="#" class="linked" test-id='33' id='33'>TC_CART_023: Kiem tra tong tien voi tat ca 6 san pham</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">2.3PROBLEMUSER</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3PROBLEMUSER</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:09 CH</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>TC_CART_024: Dung problem_user - ghi nhan bug neu phat hien</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+</span>
+<p class="name">2.2TRUONGTRONG</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.2TRUONGTRONG</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:43 CH</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>De trong username</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:46 CH</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>De trong password</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:49 CH</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>De trong ca username va password</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:11 CH</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>Username la null</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:14 CH</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>Password la null</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:17 CH</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>Ca username va password la null</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">2.3THEMSANPHAM</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3THEMSANPHAM</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:41 CH</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>TC_CART_002: Them 3 san pham - badge = 3</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:45 CH</td>
+<td>
+<a href="#" class="linked" test-id='41' id='41'>TC_CART_001: Them 1 san pham - badge = 1</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:48 CH</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>TC_CART_005: Them nhieu san pham - kiem tra danh sach trong gio</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:52 CH</td>
+<td>
+<a href="#" class="linked" test-id='43' id='43'>TC_CART_004: Them san pham theo ten va kiem tra trong gio</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:55 CH</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>TC_CART_003: Them tat ca 6 san pham - badge = 6</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">2.3DIEUHUONG</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3DIEUHUONG</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:21 CH</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>TC_CART_018: Cancel o Step 1 - quay lai cart</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:25 CH</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>TC_CART_019: Cancel o Step 2 - quay lai inventory</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:52 CH</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>TC_CART_020: Continue Shopping tu gio hang - quay lai inventory</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">2.2TAIKHOANBIKHOA</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.2TAIKHOANBIKHOA</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:30 CH</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>Dang nhap voi tai khoan bi khoa</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">2.2SAITHONGTIN</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.2SAITHONGTIN</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:33 CH</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>Username khong ton tai</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:36 CH</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>Password sai cho user hop le</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:40 CH</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>Ca username va password deu sai</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:52 CH</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>Username chua ky tu dac biet @#$%</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:55 CH</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>Username chua the script (XSS)</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:58 CH</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>Username chua SQL injection</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:01 CH</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>Username co khoang trang dau</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:05 CH</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>Username co khoang trang cuoi</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:08 CH</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>Username co khoang trang dau va cuoi</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">2.2DANGNHAPTHANHCONG</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.2DANGNHAPTHANHCONG</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:07 CH</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Dang nhap voi standard_user</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:11 CH</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>Dang nhap voi problem_user</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:15 CH</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>Dang nhap voi performance_glitch_user</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:23 CH</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>Dang nhap voi error_user</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:37:26 CH</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>Dang nhap voi visual_user</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">2.3HOANTHANHDON</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3HOANTHANHDON</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:13 CH</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>TC_CART_021: Sau khi hoan thanh - gio hang reset ve 0</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">BANGTONGHOP</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>BANGTONGHOP</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:38:18 CH</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>TONG HOP KET QUA</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:48 CH</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>TONG HOP KET QUA</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">2.3SORTSANPHAM</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3SORTSANPHAM</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:28 CH</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>TC_CART_012: Sort Price high to low</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:31 CH</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>TC_CART_011: Sort Price low to high</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:34 CH</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>TC_CART_009: Sort Name A-Z</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:38 CH</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>TC_CART_010: Sort Name Z-A</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">2.3XOASANPHAM</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>2.3XOASANPHAM</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:39:59 CH</td>
+<td>
+<a href="#" class="linked" test-id='45' id='45'>TC_CART_008: Xoa het - nut Checkout van hien thi</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:13 CH</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>TC_CART_007: Xoa het san pham - gio trong</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:48 CH</td>
+<td>
+<a href="#" class="linked" test-id='47' id='47'>TC_CART_006: Xoa 1 san pham - badge giam</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>thg 3 3, 2026 03:37:04 CH</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>thg 3 3, 2026 03:40:48 CH</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>48</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>48</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='30%'><b>48</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>111</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Dang nhap voi standard_user":0.799,"Dang nhap voi problem_user":0.936,"Dang nhap voi performance_glitch_user":5.753,"Dang nhap voi error_user":0.762,"Dang nhap voi visual_user":0.787,"Dang nhap voi tai khoan bi khoa":0.807,"Username khong ton tai":0.752,"Password sai cho user hop le":0.877,"Ca username va password deu sai":0.8,"De trong username":0.734,"De trong password":0.748,"De trong ca username va password":0.817,"Username chua ky tu dac biet @#$%":0.752,"Username chua the script (XSS)":0.75,"Username chua SQL injection":0.727,"Username co khoang trang dau":0.828,"Username co khoang trang cuoi":0.741,"Username co khoang trang dau va cuoi":0.809,"Username la null":0.714,"Password la null":0.754,"Ca username va password la null":0.653,"TONG HOP KET QUA":0,"TC_CART_018: Cancel o Step 1 - quay lai cart":0.234,"TC_CART_019: Cancel o Step 2 - quay lai inventory":1.051,"TC_CART_013: Checkout dien du thong tin - thanh cong":1.51,"TC_CART_014: Checkout de trong First Name - bao loi":1.016,"TC_CART_015: Checkout de trong Last Name - bao loi":1.001,"TC_CART_016: Checkout de trong Postal Code - bao loi":0.958,"TC_CART_017: Checkout de trong tat ca - bao loi":1.17,"TC_CART_020: Continue Shopping tu gio hang - quay lai inventory":0.49,"TC_CART_025: Kiem tra Shipping Info = Free Pony Express Delivery!":0.966,"TC_CART_022: Kiem tra tong tien chinh xac (Item total, Tax 8%, Total)":1.159,"TC_CART_023: Kiem tra tong tien voi tat ca 6 san pham":1.265,"TC_CART_024: Dung problem_user - ghi nhan bug neu phat hien":1.326,"TC_CART_021: Sau khi hoan thanh - gio hang reset ve 0":11.632,"TC_CART_012: Sort Price high to low":0.132,"TC_CART_011: Sort Price low to high":0.118,"TC_CART_009: Sort Name A-Z":0.103,"TC_CART_010: Sort Name Z-A":0.141,"TC_CART_002: Them 3 san pham - badge = 3":0.182,"TC_CART_001: Them 1 san pham - badge = 1":0.089,"TC_CART_005: Them nhieu san pham - kiem tra danh sach trong gio":0.227,"TC_CART_004: Them san pham theo ten va kiem tra trong gio":0.141,"TC_CART_003: Them tat ca 6 san pham - badge = 6":0.274,"TC_CART_008: Xoa het - nut Checkout van hien thi":10.41,"TC_CART_007: Xoa het san pham - gio trong":30.441,"TC_CART_006: Xoa 1 san pham - badge giam":0.31,"TONG HOP KET QUA":0
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>2.3CHECKOUTFORM</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3TINHTOANTIEN</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3PROBLEMUSER</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.2TRUONGTRONG</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3THEMSANPHAM</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3DIEUHUONG</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.2TAIKHOANBIKHOA</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.2SAITHONGTIN</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.2DANGNHAPTHANHCONG</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3HOANTHANHDON</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>BANGTONGHOP</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3SORTSANPHAM</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2.3XOASANPHAM</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>He Dieu Hanh</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>17.0.12</td>
+</tr>
+<tr>
+<td>Website</td>
+<td>https://www.saucedemo.com</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Google Chrome</td>
+</tr>
+<tr>
+<td>Mon hoc</td>
+<td>Kiem thu phan mem - Lab 7</td>
+</tr>
+<tr>
+<td>Bai tap</td>
+<td>Bai 2.2 (Dang Nhap) & Bai 2.3 (Gio Hang, Thanh Toan)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 48,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 48,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 111
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

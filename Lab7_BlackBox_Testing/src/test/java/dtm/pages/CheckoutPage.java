@@ -3,146 +3,109 @@ package dtm.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Page Object - Trang thanh toán / Checkout
- * (https://www.saucedemo.com/checkout-step-one.html)
+ * Sử dụng driver.findElement() trực tiếp để tránh lỗi PageFactory proxy.
  */
 public class CheckoutPage {
 
     private final WebDriver driver;
-
-    @FindBy(className = "title")
-    private WebElement lblTitle;
-
-    @FindBy(id = "first-name")
-    private WebElement txtFirstName;
-
-    @FindBy(id = "last-name")
-    private WebElement txtLastName;
-
-    @FindBy(id = "postal-code")
-    private WebElement txtPostalCode;
-
-    @FindBy(id = "continue")
-    private WebElement btnContinue;
-
-    @FindBy(id = "cancel")
-    private WebElement btnCancel;
-
-    @FindBy(id = "finish")
-    private WebElement btnFinish;
-
-    @FindBy(css = "h3[data-test='error']")
-    private WebElement lblError;
-
-    @FindBy(className = "complete-header")
-    private WebElement lblCompleteHeader;
-
-    @FindBy(className = "summary_total_label")
-    private WebElement lblTotal;
+    private final WebDriverWait wait;
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    /**
-     * Lấy tiêu đề trang.
-     */
+    /** Lấy tiêu đề trang */
     public String getTitle() {
-        return lblTitle.getText();
+        return driver.findElement(By.className("title")).getText();
     }
 
-    /**
-     * Nhập thông tin checkout.
-     */
+    /** Nhập thông tin checkout */
     public CheckoutPage fillCheckoutInfo(String firstName, String lastName, String postalCode) {
-        txtFirstName.clear();
-        txtFirstName.sendKeys(firstName);
-        txtLastName.clear();
-        txtLastName.sendKeys(lastName);
-        txtPostalCode.clear();
-        txtPostalCode.sendKeys(postalCode);
+        WebElement fn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first-name")));
+        fn.clear();
+        fn.sendKeys(firstName);
+
+        WebElement ln = driver.findElement(By.id("last-name"));
+        ln.clear();
+        ln.sendKeys(lastName);
+
+        WebElement pc = driver.findElement(By.id("postal-code"));
+        pc.clear();
+        pc.sendKeys(postalCode);
         return this;
     }
 
-    /**
-     * Click nút Continue.
-     */
+    /** Click nút Continue (dùng findElement trực tiếp) */
     public CheckoutPage clickContinue() {
-        btnContinue.click();
+        driver.findElement(By.id("continue")).click();
         return this;
     }
 
-    /**
-     * Click nút Finish.
-     */
+    /** Click nút Finish */
     public CheckoutPage clickFinish() {
-        btnFinish.click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("finish"))).click();
         return this;
     }
 
-    /**
-     * Click nút Cancel.
-     */
+    /** Click nút Cancel */
     public void clickCancel() {
-        btnCancel.click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("cancel"))).click();
     }
 
-    /**
-     * Lấy thông báo lỗi.
-     */
+    /** Lấy thông báo lỗi */
     public String getErrorMessage() {
-        return lblError.getText();
+        WebElement err = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("h3[data-test='error']")));
+        return err.getText();
     }
 
-    /**
-     * Kiểm tra thông báo lỗi có hiển thị không.
-     */
+    /** Kiểm tra thông báo lỗi có hiển thị không */
     public boolean isErrorDisplayed() {
         try {
-            return lblError.isDisplayed();
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            shortWait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.cssSelector("h3[data-test='error']")));
+            return true;
         } catch (Exception e) {
             return false;
         }
     }
 
-    /**
-     * Lấy thông báo hoàn thành đặt hàng.
-     */
+    /** Lấy thông báo hoàn thành đặt hàng */
     public String getCompleteHeader() {
-        return lblCompleteHeader.getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.className("complete-header"))).getText();
     }
 
-    /**
-     * Kiểm tra đã hoàn thành checkout.
-     */
+    /** Kiểm tra đã hoàn thành checkout */
     public boolean isOrderComplete() {
         try {
-            return lblCompleteHeader.isDisplayed();
+            return driver.findElement(By.className("complete-header")).isDisplayed();
         } catch (Exception e) {
             return false;
         }
     }
 
-    /**
-     * Lấy tổng tiền.
-     */
+    /** Lấy tổng tiền label */
     public String getTotalPrice() {
-        return lblTotal.getText();
+        return driver.findElement(By.className("summary_total_label")).getText();
     }
 
     /** Lấy Item total (trước thuế) */
     public double getItemTotal() {
         try {
-            WebElement el = driver.findElement(By.className("summary_subtotal_label"));
-            // "Item total: $xx.xx"
-            String text = el.getText().replace("Item total: $", "");
+            String text = driver.findElement(By.className("summary_subtotal_label"))
+                    .getText().replace("Item total: $", "");
             return Double.parseDouble(text);
         } catch (Exception e) {
             return 0;
@@ -152,9 +115,8 @@ public class CheckoutPage {
     /** Lấy Tax */
     public double getTax() {
         try {
-            WebElement el = driver.findElement(By.className("summary_tax_label"));
-            // "Tax: $xx.xx"
-            String text = el.getText().replace("Tax: $", "");
+            String text = driver.findElement(By.className("summary_tax_label"))
+                    .getText().replace("Tax: $", "");
             return Double.parseDouble(text);
         } catch (Exception e) {
             return 0;
@@ -164,8 +126,8 @@ public class CheckoutPage {
     /** Lấy Total */
     public double getTotal() {
         try {
-            // "Total: $xx.xx"
-            String text = lblTotal.getText().replace("Total: $", "");
+            String text = driver.findElement(By.className("summary_total_label"))
+                    .getText().replace("Total: $", "");
             return Double.parseDouble(text);
         } catch (Exception e) {
             return 0;
@@ -175,8 +137,7 @@ public class CheckoutPage {
     /** Lấy nội dung trang complete */
     public String getCompleteText() {
         try {
-            WebElement el = driver.findElement(By.className("complete-text"));
-            return el.getText();
+            return driver.findElement(By.className("complete-text")).getText();
         } catch (Exception e) {
             return null;
         }
@@ -185,8 +146,7 @@ public class CheckoutPage {
     /** Click nút Back Home */
     public void clickBackHome() {
         try {
-            WebElement btn = driver.findElement(By.id("back-to-products"));
-            btn.click();
+            driver.findElement(By.id("back-to-products")).click();
         } catch (Exception e) {
             // không tìm thấy
         }
@@ -195,11 +155,11 @@ public class CheckoutPage {
     /** Lấy Shipping Information */
     public String getShippingInfo() {
         try {
-            WebElement el = driver.findElement(By.cssSelector(".summary_info .summary_value_label:nth-of-type(2)"));
+            WebElement el = driver.findElement(
+                    By.cssSelector(".summary_info .summary_value_label:nth-of-type(2)"));
             return el.getText();
         } catch (Exception e) {
             try {
-                // fallback: lấy text chứa 'Pony Express'
                 List<WebElement> labels = driver.findElements(By.className("summary_value_label"));
                 for (WebElement l : labels) {
                     if (l.getText().contains("Pony Express"))
@@ -214,7 +174,7 @@ public class CheckoutPage {
     /** Lấy danh sách tên items trong checkout overview */
     public List<String> getItemNames() {
         List<WebElement> items = driver.findElements(By.className("inventory_item_name"));
-        List<String> names = new java.util.ArrayList<>();
+        List<String> names = new ArrayList<>();
         for (WebElement el : items) {
             names.add(el.getText());
         }
@@ -224,7 +184,7 @@ public class CheckoutPage {
     /** Lấy danh sách giá items trong checkout overview */
     public List<Double> getItemPrices() {
         List<WebElement> items = driver.findElements(By.className("inventory_item_price"));
-        List<Double> prices = new java.util.ArrayList<>();
+        List<Double> prices = new ArrayList<>();
         for (WebElement el : items) {
             prices.add(Double.parseDouble(el.getText().replace("$", "")));
         }

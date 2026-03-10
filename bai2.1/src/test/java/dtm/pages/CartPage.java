@@ -10,17 +10,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Page Object - Trang giỏ hàng (https://www.saucedemo.com/cart.html)
  */
 public class CartPage {
 
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
+    // Locators
     @FindBy(className = "title")
     private WebElement lblTitle;
+
+    @FindBy(className = "cart_item")
+    private List<WebElement> cartItems;
 
     @FindBy(id = "checkout")
     private WebElement btnCheckout;
@@ -34,65 +39,75 @@ public class CartPage {
         PageFactory.initElements(driver, this);
     }
 
-    /** Kiểm tra đang ở trang Cart */
+    /**
+     * Kiểm tra đang ở trang Cart
+     */
     public boolean isOnCartPage() {
         try {
-            return lblTitle.isDisplayed() && lblTitle.getText().equals("Your Cart");
+            wait.until(ExpectedConditions.visibilityOf(lblTitle));
+            return lblTitle.getText().equals("Your Cart");
         } catch (Exception e) {
             return false;
         }
     }
 
-    /** Lấy danh sách cart_item trực tiếp từ driver (tránh proxy List stale) */
-    private List<WebElement> findCartItems() {
-        return driver.findElements(By.className("cart_item"));
-    }
-
-    /** Lấy số sản phẩm trong giỏ hàng */
+    /**
+     * Lấy số lượng sản phẩm trong giỏ
+     */
     public int getCartItemCount() {
-        return findCartItems().size();
+        return cartItems.size();
     }
 
-    /** Lấy danh sách tên sản phẩm trong giỏ */
+    /**
+     * Lấy danh sách tên sản phẩm trong giỏ
+     */
     public List<String> getCartItemNames() {
-        return findCartItems().stream()
+        return cartItems.stream()
                 .map(item -> item.findElement(By.className("inventory_item_name")).getText())
-                .toList();
+                .collect(Collectors.toList());
     }
 
-    /** Kiểm tra sản phẩm có trong giỏ hàng không */
-    public boolean isProductInCart(String productName) {
-        return getCartItemNames().contains(productName);
+    /**
+     * Lấy giá sản phẩm theo tên
+     */
+    public double getItemPrice(String productName) {
+        for (WebElement item : cartItems) {
+            String name = item.findElement(By.className("inventory_item_name")).getText();
+            if (name.equals(productName)) {
+                String priceText = item.findElement(By.className("inventory_item_price")).getText();
+                return Double.parseDouble(priceText.replace("$", ""));
+            }
+        }
+        return -1;
     }
 
-    /** Xoá sản phẩm khỏi giỏ hàng theo tên */
-    public CartPage removeProduct(String productName) {
-        for (WebElement item : findCartItems()) {
+    /**
+     * Xóa sản phẩm khỏi giỏ theo tên
+     */
+    public CartPage removeItemByName(String productName) {
+        for (WebElement item : cartItems) {
             String name = item.findElement(By.className("inventory_item_name")).getText();
             if (name.equals(productName)) {
                 item.findElement(By.cssSelector("button[id^='remove']")).click();
                 break;
             }
         }
+        // Refresh lại element sau khi xóa
+        PageFactory.initElements(driver, this);
         return this;
     }
 
-    /** Click Checkout */
+    /**
+     * Click Checkout
+     */
     public void clickCheckout() {
-        wait.until(ExpectedConditions.elementToBeClickable(btnCheckout)).click();
+        btnCheckout.click();
     }
 
-    /** Click Continue Shopping */
+    /**
+     * Click Continue Shopping
+     */
     public void clickContinueShopping() {
         btnContinueShopping.click();
-    }
-
-    /** Kiểm tra nút Checkout có hiển thị không */
-    public boolean isCheckoutEnabled() {
-        try {
-            return btnCheckout.isDisplayed() && btnCheckout.isEnabled();
-        } catch (Exception e) {
-            return false;
-        }
     }
 }

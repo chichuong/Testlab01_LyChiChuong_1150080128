@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bai2 - Kiem Thu SauceDemo" verbose="1">
+    <listeners>
+        <listener class-name="listeners.ExtentReportListener"/>
+    </listeners>
+    <test name="Bai 2.2 - Kiem Thu Dang Nhap">
+        <classes>
+            <class name="tests.TC_DangNhapTest"/>
+        </classes>
+    </test>
+    <test name="Bai 2.3 - Kiem Thu Gio Hang va Thanh Toan">
+        <classes>
+            <class name="tests.TC_GioHangTest"/>
+        </classes>
+    </test>
+</suite>
