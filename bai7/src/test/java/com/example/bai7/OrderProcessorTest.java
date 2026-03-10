@@ -1,5 +1,10 @@
 package com.example.bai7;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,38 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * TestNG test class cho OrderProcessor.
- *
- * ===== CYCLOMATIC COMPLEXITY (CC) =====
- * Decision nodes: D1, D2, D3, D4, D5, D6, D7, D8 => 8 decisions
- * CC = 8 + 1 = 9 (cách đếm decision + 1)
- * CC = E - N + 2P (cách đếm edges - nodes + 2)
- *
- * ===== 9 BASIS PATHS =====
- * Path 1: D1=T → Exception "Gio hang trong"
- * Path 2: D1=F, D2=F, D5=F, D6=F, D7=T, D8=T → subtotal + 30000 (ship online)
- * Path 3: D1=F, D2=T, D3=T, D5=F, D6=F, D7=T, D8=T → SALE10 + ship online
- * Path 4: D1=F, D2=T, D3=F, D4=T, D5=F, D6=F, D7=T, D8=T → SALE20 + ship online
- * Path 5: D1=F, D2=T, D3=F, D4=F → Exception "Ma giam gia khong hop le"
- * Path 6: D1=F, D2=F, D5=T, D7=T, D8=T → GOLD member + ship online
- * Path 7: D1=F, D2=F, D5=F, D6=T, D7=T, D8=T → PLATINUM member + ship online
- * Path 8: D1=F, D2=F, D5=F, D6=F, D7=F → total >= 500k, no ship
- * Path 9: D1=F, D2=F, D5=F, D6=F, D7=T, D8=F → ship COD
- *
- * ===== MC/DC cho D2 && D3 =====
- * Dieu kien tong hop de vao nhanh SALE10: A && B && C
- * A = couponCode != null
- * B = !couponCode.isEmpty()
- * C = couponCode.equals("SALE10")
- *
- * | TC | A | B | C | Ket qua | Cap doc lap |
- * |------|---|---|---|---------|---------------------|
- * | MC1 | T | T | T | T | (baseline) |
- * | MC2 | F | - | - | F | {MC1,MC2} → A doc lap|
- * | MC3 | T | F | - | F | {MC1,MC3} → B doc lap|
- * | MC4 | T | T | F | F | {MC1,MC4} → C doc lap|
- */
+@Feature("OrderProcessor - calculateTotal")
 public class OrderProcessorTest {
 
     private OrderProcessor processor;
@@ -53,127 +27,95 @@ public class OrderProcessorTest {
     // BASIS PATH TEST CASES
     // =====================================================================
 
-    /**
-     * Basis Path 1: D1=T (items == null)
-     * items=null → IllegalArgumentException("Gio hang trong")
-     */
     @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Gio hang trong")
+    @Story("Basis Path")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("BP1: D1=T (items==null) -> throw IllegalArgumentException")
     public void testBP1_itemsNull_throwsException() {
         processor.calculateTotal(null, null, "SILVER", "CARD");
     }
 
-    /**
-     * Basis Path 1b: D1=T (items rong)
-     * items=[] → IllegalArgumentException("Gio hang trong")
-     */
     @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Gio hang trong")
+    @Story("Basis Path")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("BP1b: D1=T (items rong) -> throw IllegalArgumentException")
     public void testBP1b_itemsEmpty_throwsException() {
         processor.calculateTotal(new ArrayList<>(), null, "SILVER", "CARD");
     }
 
-    /**
-     * Basis Path 2: D1=F, D2=F, D5=F, D6=F, D7=T, D8=T
-     * items=[100000], coupon=null, member="SILVER", payment="CARD"
-     * subtotal=100000, discount=0, memberDiscount=0, total=100000
-     * total < 500000, payment != COD → +30000
-     * Expected: 130000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP2: D1=F, D2=F, D5=F, D6=F, D7=T, D8=T -> no coupon, SILVER, CARD, subtotal=100k => 130k")
     public void testBP2_noCoupon_noMember_shipOnline() {
         List<Item> items = Arrays.asList(new Item(100_000));
         double result = processor.calculateTotal(items, null, "SILVER", "CARD");
         Assert.assertEquals(result, 130_000.0);
     }
 
-    /**
-     * Basis Path 3: D1=F, D2=T, D3=T, D5=F, D6=F, D7=T, D8=T
-     * items=[200000], coupon="SALE10", member="SILVER", payment="CARD"
-     * subtotal=200000, discount=20000, memberDiscount=0, total=180000
-     * total < 500000, payment != COD → +30000
-     * Expected: 210000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP3: D2=T, D3=T -> SALE10, SILVER, CARD, subtotal=200k => 210k")
     public void testBP3_couponSALE10_shipOnline() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, "SALE10", "SILVER", "CARD");
         Assert.assertEquals(result, 210_000.0);
     }
 
-    /**
-     * Basis Path 4: D1=F, D2=T, D3=F, D4=T, D5=F, D6=F, D7=T, D8=T
-     * items=[200000], coupon="SALE20", member="SILVER", payment="CARD"
-     * subtotal=200000, discount=40000, memberDiscount=0, total=160000
-     * total < 500000, payment != COD → +30000
-     * Expected: 190000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP4: D2=T, D3=F, D4=T -> SALE20, SILVER, CARD, subtotal=200k => 190k")
     public void testBP4_couponSALE20_shipOnline() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, "SALE20", "SILVER", "CARD");
         Assert.assertEquals(result, 190_000.0);
     }
 
-    /**
-     * Basis Path 5: D1=F, D2=T, D3=F, D4=F
-     * items=[200000], coupon="INVALID" → IllegalArgumentException("Ma giam gia
-     * khong hop le")
-     */
     @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Ma giam gia khong hop le")
+    @Story("Basis Path")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("BP5: D2=T, D3=F, D4=F -> coupon INVALID -> throw exception")
     public void testBP5_invalidCoupon_throwsException() {
         List<Item> items = Arrays.asList(new Item(200_000));
         processor.calculateTotal(items, "INVALID", "SILVER", "CARD");
     }
 
-    /**
-     * Basis Path 6: D1=F, D2=F, D5=T, D7=T, D8=T
-     * items=[200000], coupon=null, member="GOLD", payment="CARD"
-     * subtotal=200000, discount=0, memberDiscount=200000*0.05=10000
-     * total=190000 < 500000, payment != COD → +30000
-     * Expected: 220000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP6: D5=T -> GOLD member, no coupon, CARD, subtotal=200k => 220k")
     public void testBP6_goldMember_shipOnline() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, null, "GOLD", "CARD");
         Assert.assertEquals(result, 220_000.0);
     }
 
-    /**
-     * Basis Path 7: D1=F, D2=F, D5=F, D6=T, D7=T, D8=T
-     * items=[200000], coupon=null, member="PLATINUM", payment="CARD"
-     * subtotal=200000, discount=0, memberDiscount=200000*0.10=20000
-     * total=180000 < 500000, payment != COD → +30000
-     * Expected: 210000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP7: D6=T -> PLATINUM member, no coupon, CARD, subtotal=200k => 210k")
     public void testBP7_platinumMember_shipOnline() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, null, "PLATINUM", "CARD");
         Assert.assertEquals(result, 210_000.0);
     }
 
-    /**
-     * Basis Path 8: D1=F, D2=F, D5=F, D6=F, D7=F
-     * items=[600000], coupon=null, member="SILVER", payment="CARD"
-     * subtotal=600000, discount=0, memberDiscount=0, total=600000
-     * total >= 500000 → khong tinh phi ship
-     * Expected: 600000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP8: D7=F -> total>=500k, no ship fee. subtotal=600k => 600k")
     public void testBP8_totalAbove500k_noShip() {
         List<Item> items = Arrays.asList(new Item(600_000));
         double result = processor.calculateTotal(items, null, "SILVER", "CARD");
         Assert.assertEquals(result, 600_000.0);
     }
 
-    /**
-     * Basis Path 9: D1=F, D2=F, D5=F, D6=F, D7=T, D8=F
-     * items=[100000], coupon=null, member="SILVER", payment="COD"
-     * subtotal=100000, discount=0, memberDiscount=0, total=100000
-     * total < 500000, payment == COD → +20000
-     * Expected: 120000
-     */
     @Test
+    @Story("Basis Path")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("BP9: D7=T, D8=F -> COD ship, subtotal=100k => 120k")
     public void testBP9_noCoupon_noMember_shipCOD() {
         List<Item> items = Arrays.asList(new Item(100_000));
         double result = processor.calculateTotal(items, null, "SILVER", "COD");
@@ -182,60 +124,97 @@ public class OrderProcessorTest {
 
     // =====================================================================
     // MC/DC TEST CASES cho D2 && D3
-    // Dieu kien tong hop: A && B && C
-    // A = couponCode != null
-    // B = !couponCode.isEmpty()
-    // C = couponCode.equals("SALE10")
     // =====================================================================
 
-    /**
-     * MC/DC TC1: A=T, B=T, C=T → True (vao nhanh SALE10)
-     * couponCode="SALE10", items=[200000], member="SILVER", payment="CARD"
-     * subtotal=200000, discount=20000, total=180000, +30000 = 210000
-     */
     @Test
+    @Story("MC/DC - D2 va D3")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("MC/DC TC1: A=T, B=T, C=T -> True (vao nhanh SALE10). coupon=SALE10 => 210k")
     public void testMCDC1_allTrue_entersSALE10() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, "SALE10", "SILVER", "CARD");
         Assert.assertEquals(result, 210_000.0);
     }
 
-    /**
-     * MC/DC TC2: A=F → False (couponCode=null, khong vao D2)
-     * Cap doc lap {MC1, MC2}: chi A thay doi → ket qua thay doi
-     * couponCode=null, items=[200000], member="SILVER", payment="CARD"
-     * subtotal=200000, discount=0, total=200000, +30000 = 230000
-     */
     @Test
+    @Story("MC/DC - D2 va D3")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("MC/DC TC2: A=F -> couponCode=null, khong vao D2. Cap {MC1,MC2} => A doc lap")
     public void testMCDC2_AisFalse_couponNull() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, null, "SILVER", "CARD");
         Assert.assertEquals(result, 230_000.0);
     }
 
-    /**
-     * MC/DC TC3: A=T, B=F → False (couponCode="", khong vao D2)
-     * Cap doc lap {MC1, MC3}: chi B thay doi → ket qua thay doi
-     * couponCode="", items=[200000], member="SILVER", payment="CARD"
-     * subtotal=200000, discount=0, total=200000, +30000 = 230000
-     */
     @Test
+    @Story("MC/DC - D2 va D3")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("MC/DC TC3: A=T, B=F -> couponCode empty, khong vao D2. Cap {MC1,MC3} => B doc lap")
     public void testMCDC3_BisFalse_couponEmpty() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, "", "SILVER", "CARD");
         Assert.assertEquals(result, 230_000.0);
     }
 
-    /**
-     * MC/DC TC4: A=T, B=T, C=F → False (couponCode="SALE20", khong vao D3)
-     * Cap doc lap {MC1, MC4}: chi C thay doi → ket qua thay doi
-     * couponCode="SALE20", items=[200000], member="SILVER", payment="CARD"
-     * subtotal=200000, discount=40000, total=160000, +30000 = 190000
-     */
     @Test
+    @Story("MC/DC - D2 va D3")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("MC/DC TC4: A=T, B=T, C=F -> coupon=SALE20, khong vao D3. Cap {MC1,MC4} => C doc lap")
     public void testMCDC4_CisFalse_couponNotSALE10() {
         List<Item> items = Arrays.asList(new Item(200_000));
         double result = processor.calculateTotal(items, "SALE20", "SILVER", "CARD");
         Assert.assertEquals(result, 190_000.0);
+    }
+
+    // =====================================================================
+    // EXTRA TEST CASES - tang Branch Coverage JaCoCo >= 90%
+    // =====================================================================
+
+    @Test
+    @Story("Branch Coverage")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("GOLD member + SALE10 + COD, subtotal=200k => (200k-20k)*0.95=171k +20k=191k")
+    public void testExtra_goldMember_sale10_COD() {
+        List<Item> items = Arrays.asList(new Item(200_000));
+        // subtotal=200000, discount=20000, memberDiscount=(200000-20000)*0.05=9000
+        // total=200000-20000-9000=171000, <500000, COD => +20000
+        double result = processor.calculateTotal(items, "SALE10", "GOLD", "COD");
+        Assert.assertEquals(result, 191_000.0);
+    }
+
+    @Test
+    @Story("Branch Coverage")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("PLATINUM member + SALE20 + CARD, subtotal=200k => (200k-40k)*0.9=144k +30k=174k")
+    public void testExtra_platinumMember_sale20_CARD() {
+        List<Item> items = Arrays.asList(new Item(200_000));
+        // subtotal=200000, discount=40000, memberDiscount=(200000-40000)*0.10=16000
+        // total=200000-40000-16000=144000, <500000, CARD => +30000
+        double result = processor.calculateTotal(items, "SALE20", "PLATINUM", "CARD");
+        Assert.assertEquals(result, 174_000.0);
+    }
+
+    @Test
+    @Story("Branch Coverage")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("GOLD member, subtotal lon, total>=500k -> khong ship. subtotal=600k => 570k")
+    public void testExtra_goldMember_noShip() {
+        List<Item> items = Arrays.asList(new Item(600_000));
+        // subtotal=600000, discount=0, memberDiscount=600000*0.05=30000
+        // total=570000 >= 500000 => no ship
+        double result = processor.calculateTotal(items, null, "GOLD", "CARD");
+        Assert.assertEquals(result, 570_000.0);
+    }
+
+    @Test
+    @Story("Branch Coverage")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("PLATINUM member + COD, subtotal=100k => (100k)*0.9=90k +20k=110k")
+    public void testExtra_platinumMember_COD() {
+        List<Item> items = Arrays.asList(new Item(100_000));
+        // subtotal=100000, discount=0, memberDiscount=100000*0.10=10000
+        // total=90000 < 500000, COD => +20000
+        double result = processor.calculateTotal(items, null, "PLATINUM", "COD");
+        Assert.assertEquals(result, 110_000.0);
     }
 }
