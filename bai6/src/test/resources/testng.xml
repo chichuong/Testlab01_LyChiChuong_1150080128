@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Retry Suite">
+    <listeners>
+        <listener class-name="listeners.RetryListener"/>
+    </listeners>
+    <test name="Flaky Tests">
+        <classes>
+            <class name="tests.FlakySimulationTest"/>
+        </classes>
+    </test>
+</suite>

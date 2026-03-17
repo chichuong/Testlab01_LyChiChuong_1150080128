@@ -1,0 +1,37 @@
+[
+  {
+    "username": "student",
+    "password": "Password123",
+    "role": "admin",
+    "expectSuccess": true,
+    "description": "Valid login credentials"
+  },
+  {
+    "username": "incorrectUser",
+    "password": "Password123",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Invalid username"
+  },
+  {
+    "username": "student",
+    "password": "incorrectPassword",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Invalid password"
+  },
+  {
+    "username": "",
+    "password": "Password123",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Empty username"
+  },
+  {
+    "username": "student",
+    "password": "",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Empty password"
+  }
+]

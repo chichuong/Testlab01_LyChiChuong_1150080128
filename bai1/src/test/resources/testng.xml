@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Tuan9_Bai1_TestSuite" parallel="methods" thread-count="3">
+    
+    <!-- Yêu cầu: BaseTest @BeforeMethod nhận 2 tham số browser và env từ testng.xml -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="env" value="qa"/>
+    
+    <test name="Parallel Login Tests">
+        <!-- Chạy parallel="methods" thread-count="3" → 3 cửa sổ Chrome mở cùng lúc -->
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>

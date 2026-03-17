@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-17T13:49:28 ICT" name="Login Test Suite" finished-at="2026-03-17T13:50:30 ICT" duration-ms="61974">
+    <groups>
+      <group name="regression">
+        <method signature="LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2f7298b]" name="testLoginFromExcel" class="tests.LoginTest"/>
+        <method signature="LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" name="testLoginFromExcel" class="tests.LoginTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2f7298b]" name="testLoginFromExcel" class="tests.LoginTest"/>
+        <method signature="LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" name="testLoginFromExcel" class="tests.LoginTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-03-17T13:49:28 ICT" name="Smoke Tests" finished-at="2026-03-17T13:49:45 ICT" duration-ms="17126">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:29 ICT" name="setup" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:34 ICT" duration-ms="5569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:34 ICT" name="setTestName" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:34 ICT" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6736f40f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:34 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:36 ICT" duration-ms="1456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:36 ICT" name="teardown" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:36 ICT" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:36 ICT" name="setup" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:39 ICT" duration-ms="3209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:39 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:41 ICT" duration-ms="1421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account 2]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:39 ICT" name="setTestName" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:39 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@12f9f896]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:41 ICT" name="teardown" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:41 ICT" duration-ms="180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:41 ICT" name="setup" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:43 ICT" duration-ms="2667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:43 ICT" name="setTestName" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:43 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7548e1fb]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:43 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:45 ICT" duration-ms="1309" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account 3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2f7298b]" started-at="2026-03-17T13:49:45 ICT" name="teardown" test-instance-name="testLoginFromExcel - Login valid account 3" finished-at="2026-03-17T13:49:45 ICT" duration-ms="235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Smoke Tests -->
+    <test started-at="2026-03-17T13:49:45 ICT" name="Regression Tests" finished-at="2026-03-17T13:50:30 ICT" duration-ms="44814">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:45 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:48 ICT" duration-ms="2853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:48 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:48 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@505f45cc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:48 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:49 ICT" duration-ms="1333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:49 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:50 ICT" duration-ms="296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:50 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:53 ICT" duration-ms="2976" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:53 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:53 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@994544]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:53 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:54 ICT" duration-ms="1293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account 2]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:54 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:54 ICT" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:54 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:57 ICT" duration-ms="2977" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:57 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:57 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5df92089]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:57 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:59 ICT" duration-ms="1368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://practicetestautomation.com/logged-in-successfully/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Login valid account 3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:59 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:49:59 ICT" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:49:59 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:02 ICT" duration-ms="2996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:02 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:02 ICT" duration-ms="417" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[incorrectUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Invalid username]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:02 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:02 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6f0c45f4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:02 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:02 ICT" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:02 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:05 ICT" duration-ms="2866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:05 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:05 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@45571cfc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:05 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:06 ICT" duration-ms="864" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[incorrectPassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your password is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Invalid password]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:06 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:06 ICT" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:06 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:09 ICT" duration-ms="2878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:09 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:09 ICT" duration-ms="260" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty username]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:09 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:09 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@faec277]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:09 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:10 ICT" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:10 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:13 ICT" duration-ms="3019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:13 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:13 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1b475663]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:13 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:13 ICT" duration-ms="266" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your password is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty password]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:13 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:13 ICT" duration-ms="235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:13 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:16 ICT" duration-ms="2695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:16 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:16 ICT" duration-ms="265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty everything]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:16 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:16 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1669931a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:16 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:16 ICT" duration-ms="157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:16 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:19 ICT" duration-ms="2955" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:19 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:19 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6b24ddd7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:19 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:20 ICT" duration-ms="312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student2222222222222222222222222]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Very long username]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:20 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:20 ICT" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:20 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:23 ICT" duration-ms="2961" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:23 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:23 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@12e007be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:23 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:23 ICT" duration-ms="308" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[st@ud$ent]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Special characters in username]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:23 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:23 ICT" duration-ms="201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:23 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:26 ICT" duration-ms="2837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:26 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:26 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3335afcf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:26 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:26 ICT" duration-ms="315" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[' OR 1=1 --]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your username is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[SQL injection pattern username]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:26 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:27 ICT" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:27 ICT" name="setup" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:29 ICT" duration-ms="2890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setTestName(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:29 ICT" name="setTestName" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:29 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@699e0bf0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestName -->
+        <test-method signature="testLoginFromExcel(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:29 ICT" name="testLoginFromExcel" data-provider="loginData" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:30 ICT" duration-ms="289" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[student]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[' OR 1=1 --]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Your password is invalid!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[SQL injection pattern password]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFromExcel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@67c27493]" started-at="2026-03-17T13:50:30 ICT" name="teardown" test-instance-name="testLoginFromExcel - SQL injection pattern password" finished-at="2026-03-17T13:50:30 ICT" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Regression Tests -->
+  </suite> <!-- Login Test Suite -->
+</testng-results>
