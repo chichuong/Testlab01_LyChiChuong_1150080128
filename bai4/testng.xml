@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bai4 Authorization And Error Handling Suite" verbose="1">
+    <test name="Authorization + Error Handling Scenarios">
+        <classes>
+            <class name="com.example.bai4.tests.AuthorizationErrorHandlingTest"/>
+        </classes>
+    </test>
+</suite>

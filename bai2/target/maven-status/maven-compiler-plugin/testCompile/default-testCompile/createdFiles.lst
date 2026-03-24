@@ -1,0 +1,5 @@
+com\example\bai2\tests\ApiPreconditionUiGateTest.class
+com\example\bai2\models\UserResponse.class
+com\example\bai2\base\ApiBaseTest.class
+com\example\bai2\models\CreateUserRequest.class
+com\example\bai2\tests\UserCrudApiTest.class

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Bai2 Reqres CRUD Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="API CRUD Scenarios(failed)" verbose="0">
+    <classes>
+      <class name="com.example.bai2.tests.UserCrudApiTest">
+        <methods>
+          <include name="shouldCreateThenGetUserByIdChain"/>
+          <include name="shouldPatchUserPartially"/>
+          <include name="setUpSpecs"/>
+          <include name="shouldUpdateUserByPutWithDataProvider" invocation-numbers="0 1"/>
+          <include name="shouldValidateGetUserSchema"/>
+          <include name="shouldCreateUserSuccessfully"/>
+          <include name="shouldDeleteUserSuccessfully"/>
+        </methods>
+      </class> <!-- com.example.bai2.tests.UserCrudApiTest -->
+    </classes>
+  </test> <!-- API CRUD Scenarios(failed) -->
+  <test thread-count="5" name="UI Gate By API Precondition(failed)" verbose="0">
+    <classes>
+      <class name="com.example.bai2.tests.ApiPreconditionUiGateTest">
+        <methods>
+          <include name="setUpSpecs"/>
+          <include name="verifyApiPreconditionForUiFlow"/>
+          <include name="shouldRunUiTestWhenApiPreconditionIsMet"/>
+        </methods>
+      </class> <!-- com.example.bai2.tests.ApiPreconditionUiGateTest -->
+    </classes>
+  </test> <!-- UI Gate By API Precondition(failed) -->
+</suite> <!-- Failed suite [Bai2 Reqres CRUD Suite] -->

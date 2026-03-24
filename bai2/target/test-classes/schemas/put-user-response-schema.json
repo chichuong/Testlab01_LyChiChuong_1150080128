@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["name", "job", "updatedAt"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "job": { "type": "string", "minLength": 1 },
+    "updatedAt": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

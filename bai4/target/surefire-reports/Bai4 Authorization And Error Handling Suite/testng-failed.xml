@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Bai4 Authorization And Error Handling Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Authorization + Error Handling Scenarios(failed)" verbose="0">
+    <classes>
+      <class name="com.example.bai4.tests.AuthorizationErrorHandlingTest">
+        <methods>
+          <include name="shouldReturnMissingEmailWhenLoginWithoutEmail"/>
+          <include name="shouldReturnMissingPasswordWhenLoginWithoutPassword"/>
+          <include name="shouldReturnMissingPasswordWhenRegisterWithoutPassword"/>
+          <include name="shouldRegisterSuccessfully"/>
+          <include name="setUpSpecs"/>
+          <include name="shouldHandleLoginScenarios" invocation-numbers="0 1 2 3 4"/>
+          <include name="shouldLoginSuccessfullyWithValidCredentials"/>
+        </methods>
+      </class> <!-- com.example.bai4.tests.AuthorizationErrorHandlingTest -->
+    </classes>
+  </test> <!-- Authorization + Error Handling Scenarios(failed) -->
+</suite> <!-- Failed suite [Bai4 Authorization And Error Handling Suite] -->

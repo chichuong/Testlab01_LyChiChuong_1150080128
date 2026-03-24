@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Bai6 API Plus UI Integration Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="API Precondition To UI Verification(failed)" verbose="0">
+    <classes>
+      <class name="com.example.bai6.tests.ApiUiIntegrationTest">
+        <methods>
+          <include name="loginPreconditionBeforeEachMethod"/>
+          <include name="shouldRunFullApiUiIntegrationFlow"/>
+          <include name="shouldCheckApiAliveFlag"/>
+          <include name="shouldPrepareLoginTokenFromApi"/>
+          <include name="tearDownDriver"/>
+          <include name="shouldVerifyUiAfterSuccessfulApiLogin"/>
+          <include name="setUpSpecs"/>
+        </methods>
+      </class> <!-- com.example.bai6.tests.ApiUiIntegrationTest -->
+    </classes>
+  </test> <!-- API Precondition To UI Verification(failed) -->
+</suite> <!-- Failed suite [Bai6 API Plus UI Integration Suite] -->

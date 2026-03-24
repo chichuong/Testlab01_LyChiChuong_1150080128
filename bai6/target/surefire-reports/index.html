@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link">
+              <span class="suite-name border-skipped">Bai6 API Plus UI Integration Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>D:\hoc\kiemthu\doc\tuan10\bai6\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Bai6_API_Plus_UI_Integration_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">4 methods,  4 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" class="hide-methods skipped suite-Bai6_API_Plus_UI_Integration_Suite"> (hide)</a> <!-- hide-methods skipped suite-Bai6_API_Plus_UI_Integration_Suite -->
+                      <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" class="show-methods skipped suite-Bai6_API_Plus_UI_Integration_Suite"> (show)</a> <!-- show-methods skipped suite-Bai6_API_Plus_UI_Integration_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Bai6_API_Plus_UI_Integration_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" title="com.example.bai6.tests.ApiUiIntegrationTest" class="method navigator-link" hash-for-method="shouldCheckApiAliveFlag">shouldCheckApiAliveFlag</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" title="com.example.bai6.tests.ApiUiIntegrationTest" class="method navigator-link" hash-for-method="shouldPrepareLoginTokenFromApi">shouldPrepareLoginTokenFromApi</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" title="com.example.bai6.tests.ApiUiIntegrationTest" class="method navigator-link" hash-for-method="shouldRunFullApiUiIntegrationFlow">shouldRunFullApiUiIntegrationFlow</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" title="com.example.bai6.tests.ApiUiIntegrationTest" class="method navigator-link" hash-for-method="shouldVerifyUiAfterSuccessfulApiLogin">shouldVerifyUiAfterSuccessfulApiLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Bai6_API_Plus_UI_Integration_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Bai6_API_Plus_UI_Integration_Suite" class="panel Bai6_API_Plus_UI_Integration_Suite">
+          <div class="suite-Bai6_API_Plus_UI_Integration_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.example.bai6.tests.ApiUiIntegrationTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="shouldCheckApiAliveFlag">
+                  </a> <!-- shouldCheckApiAliveFlag -->
+                  <span class="method-name">shouldCheckApiAliveFlag</span>
+                  <div class="stack-trace">org.testng.SkipException: API is not alive, skip full UI integration flow.
+	at com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag(ApiUiIntegrationTest.java:102)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(API alive check: GET /api/users must return 200, then store result into isApiAlive)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="shouldPrepareLoginTokenFromApi">
+                  </a> <!-- shouldPrepareLoginTokenFromApi -->
+                  <span class="method-name">shouldPrepareLoginTokenFromApi</span>
+                  <div class="stack-trace">org.testng.SkipException: API login precondition failed, UI verification tests must be skipped.
+	at com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi(ApiUiIntegrationTest.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(API precondition check: POST /api/login must return 200 and token to allow UI verification)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="shouldRunFullApiUiIntegrationFlow">
+                  </a> <!-- shouldRunFullApiUiIntegrationFlow -->
+                  <span class="method-name">shouldRunFullApiUiIntegrationFlow</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.example.bai6.tests.ApiUiIntegrationTest.shouldRunFullApiUiIntegrationFlow() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 22 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Full integration flow: UI login, add 2 items, verify badge=2, verify cart has 2 products)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="shouldVerifyUiAfterSuccessfulApiLogin">
+                  </a> <!-- shouldVerifyUiAfterSuccessfulApiLogin -->
+                  <span class="method-name">shouldVerifyUiAfterSuccessfulApiLogin</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.example.bai6.tests.ApiUiIntegrationTest.shouldVerifyUiAfterSuccessfulApiLogin() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 22 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(UI verification: login via form and verify inventory URL + title Swag Labs)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Bai6_API_Plus_UI_Integration_Suite-class-skipped -->
+        </div> <!-- panel Bai6_API_Plus_UI_Integration_Suite -->
+        <div panel-name="test-xml-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\hoc\kiemthu\doc\tuan10\bai6\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Bai6 API Plus UI Integration Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;API Precondition To UI Verification&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.example.bai6.tests.ApiUiIntegrationTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- API Precondition To UI Verification --&gt;
+&lt;/suite&gt; &lt;!-- Bai6 API Plus UI Integration Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Bai6 API Plus UI Integration Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">API Precondition To UI Verification (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Bai6 API Plus UI Integration Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Bai6 API Plus UI Integration Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Bai6_API_Plus_UI_Integration_Suite');
+function tableData_Bai6_API_Plus_UI_Integration_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(4);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'shouldCheckApiAliveFlag')
+data.setCell(0, 2, 'com.example.bai6.tests.ApiUiIntegrationTest')
+data.setCell(0, 3, 294);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'shouldPrepareLoginTokenFromApi')
+data.setCell(1, 2, 'com.example.bai6.tests.ApiUiIntegrationTest')
+data.setCell(1, 3, 2);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'shouldRunFullApiUiIntegrationFlow')
+data.setCell(2, 2, 'com.example.bai6.tests.ApiUiIntegrationTest')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'shouldVerifyUiAfterSuccessfulApiLogin')
+data.setCell(3, 2, 'com.example.bai6.tests.ApiUiIntegrationTest')
+data.setCell(3, 3, 0);
+window.suiteTableData['Bai6_API_Plus_UI_Integration_Suite']= { tableData: data, tableDiv: 'times-div-Bai6_API_Plus_UI_Integration_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 296 ms</span>
+              <div id="times-div-Bai6_API_Plus_UI_Integration_Suite">
+              </div> <!-- times-div-Bai6_API_Plus_UI_Integration_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Bai6 API Plus UI Integration Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Bai6_API_Plus_UI_Integration_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.bai6.tests.ApiUiIntegrationTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpSpecs</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">loginPreconditionBeforeEachMethod</span>
+                <span class="method-start">996 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">shouldCheckApiAliveFlag</span>
+                <span class="method-start">4338 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">4636 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">loginPreconditionBeforeEachMethod</span>
+                <span class="method-start">4640 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">shouldPrepareLoginTokenFromApi</span>
+                <span class="method-start">4849 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">4854 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

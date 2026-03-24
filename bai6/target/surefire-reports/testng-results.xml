@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="0" failed="0" skipped="4">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-24T15:26:08 ICT" name="Bai6 API Plus UI Integration Suite" finished-at="2026-03-24T15:26:13 ICT" duration-ms="4925">
+    <groups>
+    </groups>
+    <test started-at="2026-03-24T15:26:08 ICT" name="API Precondition To UI Verification" finished-at="2026-03-24T15:26:13 ICT" duration-ms="4925">
+      <class name="com.example.bai6.tests.ApiUiIntegrationTest">
+        <test-method is-config="true" signature="setUpSpecs()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:08 ICT" name="setUpSpecs" finished-at="2026-03-24T15:26:09 ICT" duration-ms="982" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpSpecs -->
+        <test-method is-config="true" signature="loginPreconditionBeforeEachMethod()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:09 ICT" name="loginPreconditionBeforeEachMethod" finished-at="2026-03-24T15:26:13 ICT" duration-ms="3340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPreconditionBeforeEachMethod -->
+        <test-method signature="shouldCheckApiAliveFlag()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="shouldCheckApiAliveFlag" description="API alive check: GET /api/users must return 200, then store result into isApiAlive" finished-at="2026-03-24T15:26:13 ICT" duration-ms="294" status="SKIP">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[API is not alive, skip full UI integration flow.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: API is not alive, skip full UI integration flow.
+at com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag(ApiUiIntegrationTest.java:102)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldCheckApiAliveFlag -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="tearDownDriver" finished-at="2026-03-24T15:26:13 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+        <test-method is-config="true" signature="loginPreconditionBeforeEachMethod()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="loginPreconditionBeforeEachMethod" finished-at="2026-03-24T15:26:13 ICT" duration-ms="208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPreconditionBeforeEachMethod -->
+        <test-method signature="shouldPrepareLoginTokenFromApi()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="shouldPrepareLoginTokenFromApi" description="API precondition check: POST /api/login must return 200 and token to allow UI verification" finished-at="2026-03-24T15:26:13 ICT" duration-ms="2" status="SKIP">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[API login precondition failed, UI verification tests must be skipped.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: API login precondition failed, UI verification tests must be skipped.
+at com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi(ApiUiIntegrationTest.java:67)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldPrepareLoginTokenFromApi -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="tearDownDriver" finished-at="2026-03-24T15:26:13 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+        <test-method signature="shouldRunFullApiUiIntegrationFlow()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="shouldRunFullApiUiIntegrationFlow" description="Full integration flow: UI login, add 2 items, verify badge=2, verify cart has 2 products" finished-at="2026-03-24T15:26:13 ICT" depends-on-methods="com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.bai6.tests.ApiUiIntegrationTest.shouldRunFullApiUiIntegrationFlow() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.bai6.tests.ApiUiIntegrationTest.shouldRunFullApiUiIntegrationFlow() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldCheckApiAliveFlag() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldRunFullApiUiIntegrationFlow -->
+        <test-method signature="shouldVerifyUiAfterSuccessfulApiLogin()[pri:0, instance:com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]" started-at="2026-03-24T15:26:13 ICT" name="shouldVerifyUiAfterSuccessfulApiLogin" description="UI verification: login via form and verify inventory URL + title Swag Labs" finished-at="2026-03-24T15:26:13 ICT" depends-on-methods="com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.bai6.tests.ApiUiIntegrationTest.shouldVerifyUiAfterSuccessfulApiLogin() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.bai6.tests.ApiUiIntegrationTest.shouldVerifyUiAfterSuccessfulApiLogin() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0 depends on not successfully finished methods 
+[com.example.bai6.tests.ApiUiIntegrationTest.shouldPrepareLoginTokenFromApi() on instance com.example.bai6.tests.ApiUiIntegrationTest@323b36e0]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldVerifyUiAfterSuccessfulApiLogin -->
+      </class> <!-- com.example.bai6.tests.ApiUiIntegrationTest -->
+    </test> <!-- API Precondition To UI Verification -->
+  </suite> <!-- Bai6 API Plus UI Integration Suite -->
+</testng-results>
